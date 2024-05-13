@@ -1,0 +1,159 @@
+
+Calculator Project
+
+
+Pseudo:
+
+Take A,B
+ADD  A,B
+RETURN INTEGER
+
+Test Cases for Unit Testing:
+A , B
+
+TC-1: 5,5
+TC-2: 5,-5
+TC-3: 0, 5
+TC-4: _ , _
+TC_5:  d, 4
+
+Dev-1:
+Actual code
+ int add(int a, int b){
+	
+	return a + b;
+
+}
+================================
+
+TDD - Test Driven Development:
+==============================
+Testing and feedback are the keys to building a great product. However, incorporating them in later stages is more challenging than integrating them right from the beginning when making changes is easy. Test-driven development ensures this doesn’t happen by providing instant feedback and fixing issues before they become challenging. Read on to learn what test-driven development is, how it works, and how TDD can benefit your business.
+
+Ex: TDD tools are Junit , Mocha , PyUNit , Nunit, RSpec ....
+
+
+
+Testing code :
+
+
+
+
+ void testAdd(){
+
+		//add(5,5);
+		//add(5,-5);
+
+	assertEquals(10,add(5,5));  // 10
+
+	}
+
+
+Unit Testing by Dev-1 
+
+---------------------
+Dev-2:
+
+ int sub(int a, int b){
+	return a-b;
+ }
+
+
+Unit Testing by Dev-2 
+
+------------------------
+
+Integration Testing:
+
+
+Deployment and Maintainance
+
+
+------------------------------------------------
+
+BDD- 
+Behavior-driven development (BDD) is based on the same concepts as TDD but one step higher, focusing on functional testing of the expected behaviors of an application – hence its name. In this way, BDD has often been considered an extension of TDD, helping to test whether or not all the units work together as expected to form a whole application.
+
+BDD creates a functional test (a higher-level test) that establishes a requirement that fails because the feature does not exist.
+
+Ex: Cucumber , Gherkins 
+
+BDD:  GIVEN , WHEN , THEN
+
+calsi.gerkins
+
+Given: Open Calculator App
+When :  User Enter [inputs a , b as  5 , 5 ]  and =
+Then :  Show output
+
+-------------------------
+
+Actual BDD Program
+-------------------
+
+@Given("Open Calculator App")
+public void Open_Calculator_App(){
+
+		// which open calculator app	
+	
+}
+
+@When("User Enter [inputs a , b ]")
+public   int User_Enter_Input(int a, int b){
+
+
+		return add(a,b);
+	
+
+}
+
+@Then("Show output")
+
+public void Show_Output(){
+
+
+	print result;
+
+		close calculator app logic;
+}
+
+
+
+------------------------------------------
+
+BDD for facebook app:
+--------------------
+Features file
+Given:  User open browser 
+When:  User type url www.facebook.com
+Then: Login Page appear
+Then: User Enter |username : javeed|  and |password: tiger|
+And:  Enter Login Button
+Then:  Login success
+
+
+
+@Given("User open browser")
+public void  User_OPen_Browser(){
+
+	Browser.open("Downloads/ChromSetup.exe")
+
+
+} 
+
+@When(User type url www.facebook.com)
+public void User_Type_Url(){
+
+		writeUrl("http://www.facebook.com")
+	
+
+
+}
+
+
+
+
+
+
+
+
