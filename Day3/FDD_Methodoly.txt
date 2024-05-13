@@ -1,0 +1,38 @@
+What is FDD in Agile?
+FDD, which stands for Feature-Driven Development, is a framework in the Agile methodology. As the name suggests, it focuses on developing working software with features that satisfy client needs. FDD aims to ensure regular and on-time delivery to customers, in line with the values and principles of the Agile Manifesto.
+
+IT strategist Jeff de Luca originally devised the FDD concept in 1997 to organize a project for a bank in Singapore. The 15-month Agile project included 50 team members, and its success led to widespread adoption of the FDD model.
+
+The iterative and incremental development process is central to FDD. Teams break their projects down into smaller increments that are easier to manage. The workload is divided into short Agile iterations, where developers repeat steps until the final deliverable is deemed fit for release. FDD teams also prepare progress reports and carry out regular inspections to ensure a high standard of quality.
+
+Domain object modeling is one of the best practices of FDD. Inspired by Peter Coad’s research on object-oriented design, domain object modeling is when teams outline the domains of the problems they are hoping to solve. This enables them to create a model where they can add corresponding features. 
+
+FDD is a solid alternative to the more well-known Agile frameworks such as Scrum and Kanban. Some Agile practitioners prefer FDD to Scrum because it relies on documentation to communicate rather than daily meetings, which can be time-consuming. FDD is suitable for large-scale, long-term projects, as it enables teams to manage changing requirements on an ongoing basis.
+
+The five steps in FDD
+There are five key activities in Feature-Driven Development:
+
+1: Develop the overall model
+Here, an FDD team will determine the project scope. Multiple models will be proposed and merged to create one overall model.
+
+2: Build the features list
+Next, the team members will outline the customer-focused features to be developed. They will be small functions that can be completed in a short period of time. An example could be to create an automatic reminder for subscription renewal.
+
+3: Plan by feature
+The team will assess the individual features in the list and arrange them in the appropriate order. Then, the features will be assigned to team members.
+
+4: Design by feature
+At this stage, the team’s chief programmer will choose which features to develop within a two-week period. A design package will be created for each feature, and team members will conduct a review before building commences.
+
+5: Build by feature
+Developers work to build the code for the aforementioned features. This code will be tested before the final version is created.
+
+FDD team roles
+In an FDD team structure, there are six chief roles. These are:
+
+Project manager 
+Chief architect
+Development manager
+Chief programmer
+Class owner
+Domain expert
