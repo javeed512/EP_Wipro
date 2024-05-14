@@ -1,0 +1,65 @@
+What is kanban?
+Kanban is a popular framework used to implement Agile and DevOps software development. It requires real-time communication of capacity and full transparency of work. Work items are represented visually on a kanban board, allowing team members to see the state of every piece of work at any time.
+
+
+
+Optimizing software development with Kanban flow
+Kanban flow, a cornerstone of agile and DevOps methodologies, drives efficiency by orchestrating seamless task progression through visualized workflows. Kanban flow mirrors the streamlined inventory management of supermarkets, ensuring tasks move through development processes precisely when needed.
+
+Visualized on Kanban boards, tasks represented as cards enable transparent progress tracking and swift identification of bottlenecks. By limiting work-in-progress (WIP), teams optimize resource allocation and maintain a steady workflow. Kanban's focus on continuous improvement is facilitated by metrics like control charts and cumulative flow diagrams, empowering teams to refine workflows iteratively.
+
+In software development, kanban flow fosters dynamic task management, accelerates delivery cycles, and enhances customer satisfaction through focused, uninterrupted work. In essence, kanban flow epitomizes efficiency—a harmonious blend of transparency, adaptability, and continuous improvement—unlocking the full potential of agile methodologies.
+
+Structuring your Kanban flow
+Establishing a structured kanban flow within your software development team is essential to implementing kanban effectively. This ensures smooth task progression and optimized workflow management. Here's how you can structure your kanban flow:
+
+Visualize workflow: Begin by visualizing your team's workflow on a Kanban board. Whether physical or virtual, the board should depict each stage of the development process, from task inception to completion.
+
+Standardize workflow: Define and standardize the workflow stages according to your team's processes and requirements. Common stages include "To Do," "In Progress," and "Done," but customize as needed to reflect your unique workflow.
+
+Identify blockers and dependencies: Ensure that your kanban board enables immediate identification of blockers and dependencies. This transparency allows for prompt resolution and prevents workflow disruptions.
+
+Set work-in-progress (WIP) limits: Implement WIP limits for each workflow stage to avoid overburdening and to maintain a steady workflow. WIP limits help optimize resource allocation and reduce multitasking, fostering higher productivity.
+
+Encourage collaboration: Foster a culture of collaboration within your team, where members collectively address bottlenecks and work together to ensure smooth workflow progression. This collaborative approach promotes efficiency and accelerates task completion.
+
+Utilize kanban cards: Represent each task as a kanban card on the board, containing essential details such as task description, assignee, and estimated time for completion. Kanban cards facilitate visual tracking of task progress and promote transparency within the team.
+
+By structuring your kanban flow in this manner, you can streamline your software development processes, enhance team collaboration, and maximize efficiency in task management.
+
+
+Kanban for software teams
+Agile software development teams today can leverage JIT principles by matching the amount of work in progress (WIP) to the team's capacity. This gives teams more flexible planning options, faster output, clearer focus on continuous improvement, and transparency throughout the development cycle.
+
+
+
+While the core principles of the Kanban framework are timeless and applicable to almost any industry, software development teams have found particular success with the agile practice. Unlike implementing kanban on a factory floor, which would involve changes to physical processes and the addition of substantial materials, the only physical things software teams need are a board and task cards, and even those can be virtual.
+
+Kanban boards
+The work of all Kanban teams revolves around a Kanban board, a tool used to visualize and optimize the workflow across teams. While physical boards are popular among some teams, virtual boards are crucial in any agile software development tool for their traceability, collaboration, and accessibility from multiple locations.
+
+Regardless of whether a team uses a digital or physical kanban board, it ensures that the team visualizes their work, standardizes their workflow, and immediately identifies and resolves all blockers and dependencies. A basic kanban board has a three-step workflow: To Do, In Progress, and Done. However, depending on a team's size, structure, and objectives, they can map the workflow to meet their unique processes.
+
+Because the kanban methodology relies upon full transparency of work and real-time communication, the kanban board acts as the single source of truth for the team's work.
+
+
+Kanban cards
+In Japanese, kanban literally translates to "signboard." Kanban teams represent every work item as a separate card on the board. The main purpose of representing work as a card on the Kanban board is to allow team members to track progress through its workflow in a highly visual manner. 
+
+Kanban cards feature critical information about project tasks, giving teams visibility into who is responsible for which tasks and a brief description of the job, and how long tasks are estimated to take. Cards on virtual kanban boards often feature screenshots and other technical details that are valuable to the assignee. 
+
+Enabling team members to view the status of each task at any moment, alongside relevant details, promotes heightened focus, comprehensive traceability, and rapid identification of blockers and dependencies.
+
+Benefits of the kanban framework
+Kanban is one of the most popular software development methodologies agile teams use today. Kanban offers additional advantages to task planning and throughput for teams of all sizes.
+
+Planning flexibility
+A kanban team focuses only on the work that's actively in progress. Once the team completes a task, they select the next task from the backlog. The product owner is free to reprioritize work in the backlog without disrupting the team because any changes outside the current work items don't impact the team. 
+
+As long as the product owner keeps the most important work items on top of the backlog, the development team can rest assured they are delivering maximum value back to the business.
+
+
+
+
+
+

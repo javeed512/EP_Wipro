@@ -1,0 +1,10 @@
+
+Muda, mura and muri are three types of wasteful actions that negatively impact workflow, productivity and ultimately, customer satisfaction. The terms are Japanese and play an important role in the Toyota Way, a management philosophy developed by Taiichi Ohno for creating automobiles on demand after World War II. The labels muda, mura and muri are also used in lean development, an Agile software methodology inspired by the Toyota Way.
+
+Muda, mura and muri provide guidelines for what to avoid in the way of inefficient resource allocation. Recognizing the three types of inefficiencies helps to avoid wasted time, materials, product and human effort.
+
+Muda means wastefulness. Work that does not add value is divided into two categories: work that is necessary but not recognized by the customer as adding value -- and work that simply is not necessary.  The second type of Muda should be identified and eliminated. There are seven wastes recognized in Muda.
+
+Mura means irregularity or a lack of uniformity. Mura is seen to cause Muda. The irregularity in production can result in lost product and wasted time. Under both the Toyota Production System and lean production, Mura should be avoided by selectively adding capacity or otherwise leveling the work load in the production line.
+
+Muri means over worked. Pushing beyond rational workloads can be caused by Mura or by excess removal of Muda. When people or equipment are overworked, they are more prone to failure. In the case of over-worked employees, this can result in reduced productivity, absenteeism and churn.
