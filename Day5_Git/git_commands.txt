@@ -1,0 +1,66 @@
+
+
+git Commands:
+--------------
+
+$git add .   (file name)
+
+->It will add files/folders from current folder to the cache/local git repository / stage
+-> this action is known as staging
+
+$ git status
+-> It is to check status of added files or to check which set of files staged/added  and which set of files unstaged/not added.
+
+$ git commit -m "Any commit related message"
+-> it will store/save all files and folders into local git repository.
+-> and ready to push to the remote repository
+
+$ git push origin master
+
+-> It will push all files and folders from local repo to the remote repository which is presentated by nick name/alias name "origin" , and  "master" is the branch name.
+
+
+
+
+Note: While doing above process very first time github server asked git client to verify username,email and password for authentication purpose. It is only one time process.
+
+User Authentication:
+
+git config  --global user.name "git_user_name"
+
+git config  --global  user.email  "git_user_email_id"
+
+Note: Here , try to choose browser option for authentication/verification process.
+
+
+
+
+
+Now , let see how other users/team mates can access our repositories.
+
+
+$ git clone  https://github.com/username/RepoName.git
+
+-> it will used to clone others repository into our system/machine.
+ We need not to say "git init" in this case because it is optional 
+
+Note: Use git clone option only very first time to clone repository.
+
+Then after use pull command everytime you want to update / pull  data from remote repository.
+
+
+$ git pull  https://github.com/username/RepoName.git  branch_name
+
+
+
+
+
+$git rm  --cached File_name/folder_name 
+->it will help us to remove anything from staged / cache
+
+$git restore --staged file_name/folder_name 
+->it will help us to restor anything from staged / cache
+
+Note: both rm , restore help us to unstaged files/folders
+
+
