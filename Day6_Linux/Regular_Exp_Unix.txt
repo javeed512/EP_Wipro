@@ -1,0 +1,32 @@
+Regular Expressions:
+====================
+
+
+[a-z]  --> any small case alphabet 
+[A-Z]  --> any upper case alphabet
+[a-zA-Z] --> any alphabet either in upper or lower case
+[0-9] --> any one digit between 0 to 9
+
+[A-Z]{3} ---> any 3 upper case characters   ex: TOM ,RAJ , WIN, GET
+
+[A-Z][a-z]{4}  --> first letter should be upper case A-Z , next 4 characters should be in lower case
+ 			ex:  Azeez , Rajan , Kamla
+[$#@] --> either  $  or #  or @
+
+^S  --> should start with capital 'S'  ex:  Satish , Sonu , Sham
+h$  --> should end with  small 'h'  ex:  ashish , 
+
+[Ss]mile --> Smile or smile
+
+[6-9][0-9]{9} --> any 10 digit number start with 6/7/8/9
+ex: 9432112345
+
+
+
+
+
+
+
+
+
+

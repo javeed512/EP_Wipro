@@ -1,0 +1,13 @@
+In the vast world of Linux text editors, Nano stands out as a simple yet powerful tool for editing files directly from the command line interface. Whether you’re a novice user or an experienced developer, Nano offers a straightforward and efficient editing experience. In this article, we’ll delve into the depths of Nano, covering its features, usage, customization options, and advanced functionalities.
+
+Introduction to Nano
+Nano is a command-line text editor that comes pre-installed with most Linux distributions. It’s designed to be user-friendly, with a simple interface that resembles popular graphical text editors. Nano provides essential editing features, making it ideal for quick edits, creating configuration files, or writing scripts directly in the terminal.
+
+Installing Nano Text Editor
+Nano is generally by default available in many Linux distributions but in case, it is not installed you may install the same using the following commands.
+
+sudo apt update
+In case of Debian/Ubuntu
+sudo apt install nano
+In case of CentOS/Fedora
+sudo yum install nano
