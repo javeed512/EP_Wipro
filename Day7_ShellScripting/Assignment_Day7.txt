@@ -1,0 +1,7 @@
+Revise and Practice Unix commands and Shell Scripting lab given by Javeed sir.
+
+Revise git commands
+
+Complete Daily assignment till Day-7
+
+
