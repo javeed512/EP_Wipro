@@ -1,0 +1,323 @@
+
+hello.sh
+
+1.open file in  vi editor
+> vi   hello.sh
+
+In Vi , use  I for INSERT MODE , Esc to change mode , shift+:wq   to save file and quit from vi.
+
+ 
+hello.sh program
+------------------
+
+#!/bin/bash
+
+echo "Hello World";
+----------------------
+
+
+
+Note:  Always grant execute permission on .sh file before we execute it.
+
+> chmod  u+x  hello.sh
+
+
+How to Run .sh file
+--------------------
+>bash   hello.sh
+
+(OR)
+
+> sh -x  hello.sh
+
+
+Variable in Shell Script:
+=========================
+
+variable.sh
+
+#!/bin/bash
+
+# declare and assign value to name and salary variables
+
+name="Javeed"
+salary=50000
+
+echo "Welcome  $name"
+echo "Salary is :  $salary"
+
+
+==========================
+
+Shell Script to read values from keyboard at runtime
+
+
+#!/bin/bash
+ 
+ 
+echo "Enter  Num1 value"
+read   num1
+ 
+echo "Enter Num2 value"
+read  num2
+ 
+ 
+let  result=$num1+$num2
+ 
+echo "Result is :  $result"
+ 
+
+--------------------------------
+
+emp.lst
+
+eid    ename   job       salary
+101   king     president  50000
+102   tom      manager    40000
+103   smith    developer  30000
+104   ford      tester    25000
+105   raju      analyst   35000    
+
+
+
+logical_operator.sh
+--------------------
+grep  "manager"  emp.lst  &&  echo "manager pattern found"
+ 
+grep  "salesman"  emp.lst  ||  echo "salesman  pattern  not found"
+
+
+
+
+
+Relational/comparison operators
+
+
+eq , ne  , gt , lt  ,ge , le 
+
+
+else if  syntax
+----------------
+
+if test  A -eq  B  then
+
+command-1
+
+   else  if  test   C  -eq  D then
+   command-2
+
+	else  
+
+		command-3
+
+   	fi
+
+
+fi
+
+
+OR
+--------------------
+
+
+if test  A -eq  B  then
+
+command-1
+
+   elif  test   C  -eq  D then
+   command-2
+
+	else  
+
+		command-3
+
+   	
+
+
+fi
+
+------------------------------------
+
+elif demo
+==========
+
+echo "enter a value"
+ read a
+
+
+echo "enter b value"
+ read b
+ 
+echo "enter c value"
+  read c
+ 
+if [ $a  -gt  $b ];  then
+ 
+echo "a is greater than b"
+ 
+elif  [ $a -gt $c ]; then
+echo "a is greater than c"
+ 
+else
+ 
+ echo "a is not greater than b or c"
+ 
+fi
+
+
+
+------------------------------------------
+
+str="Javeed"
+ 
+if  test  -n str;   then
+ 
+echo "str valu is $str , its not null "
+ 
+fi
+
+---------------------------------
+str=null
+ 
+if  test  -z str;   then
+ 
+echo "str value is  null "
+ 
+fi
+
+---------------------------------
+
+
+case demo 
+===========
+case.sh
+
+
+
+echo "Enter your choice"
+ 
+read  choice
+ 
+case  $choice in
+1)  ls -l   ;;
+2)  ps -f  ;;
+3)  date ;;
+4) who ;;
+5)  exit ;;
+*)  echo "invalid option , enter valid option";;
+esac
+
+
+Loops in Shell Scripting:
+============================
+while loop:
+----------
+
+echo  "Enter any number GT 3"
+read   num
+ 
+while [ $num -gt  3 ]
+ 
+  do
+ 
+     ps  -a
+ 
+    sleep  5
+ 
+ 
+done
+ 
+
+
+
+----------------------------------
+while example-2
+
+
+
+while  echo "Enter  Eid "
+ 
+do
+ 
+read  eid
+ 
+ 
+case "$eid"  in
+ 
+[0-9][0-9][0-9])  grep  "^$eid"  emp.lst ;;
+*)  echo  "employee Eid:   $eid  not found"  ;;
+ 
+ 
+esac
+ 
+done
+
+
+
+
+
+---------------------------------------
+
+
+until do:  repeat / execute loop until condition is false , once condition is true it will terminate
+
+Example:
+=========
+
+until  false
+ 
+        do
+ 
+                ps  -a
+ 
+                sleep 2
+ 
+done
+
+
+
+
+-----------------------------------------------------
+
+
+For Loop:
+
+ex1:
+
+
+for  x  in  1 2 3 4 5
+ 
+ do
+ 
+echo "The value of X is : $x"
+ 
+done
+
+
+----------------------------------
+ex2:
+
+ for  file  in   *.sh
+ 
+        do
+ 
+                echo   $file
+ 
+      done
+
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
