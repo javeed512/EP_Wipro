@@ -1,0 +1,28 @@
+Constraints:
+------------
+Set of Rules.
+
+PRIMARY KEY = NOT NULL + UNIQUE
+FOREIGN KEY (References) = Set of values from PK or Null value
+NOTNULL = Column value cannot be null , it should be some value
+UNIQUE  = Column values should be unique(duplicat is not allowed) but null                                 is allowed
+CHECK  = it is used for custom/user defined constraints
+ex:  EName varchar(30) Check(Ename = Upper(Ename))
+	
+
+
+
+
+
+
+Employee Table:
+--------------
+EID  Integer(3)  Primary Key 
+ENAME  Varchar(30)  
+SALARY Integer(10)  
+JOB
+EMAIL   Varchar(20) 
+PHONENO  Integer(10)
+DOJ
+DNO
+

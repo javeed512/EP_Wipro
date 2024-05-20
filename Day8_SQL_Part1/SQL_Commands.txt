@@ -1,0 +1,64 @@
+
+SQL:
+
+Structural Query Lang.
+It is common lang for all RDBMS
+
+ex: RDBMS --> Oracle,Mysql,Sybase,DB2,H2,Postgres .....
+
+SQL is used to communicate any one the RDBMS databases.
+
+SQL can perform CRUD Operations againts any DB.
+
+C - Create/insert a new record
+R - Retrieve / select records
+U - Update records in table
+D - Delete records from table
+
+
+SQL is again divided into multiple sub languages:
+
+DDL- Data Definitation lang
+CREATE , ALTER , DROP , TRUNCATE , RENAME
+------------------
+DML - Data Manipulation lang
+INSERT , UPDATE , DELETE
+-------------------
+
+DQL/DRL - Data Query Lang / Data Retrieval lang
+SELECT
+------------------------------------
+TCL - Transaction Control lang
+COMMIT , ROLLBACK , SAVEPOINT
+-------------------------------------
+DCL- Data control lang
+GRANT , REVOKE
+
+
+MYSQL : It is RDBMS given by Oracle corporation.
+
+MYSQL can be accessible using Mysql Workbench (GUI)
+MYSQL Command Line Client (CLI)
+
+Data types:
+-----------
+
+Int
+BigInt
+Char
+Varchar2
+Boolean
+Date
+DateTime
+
+
+
+
+
+
+
+
+
+
+
+

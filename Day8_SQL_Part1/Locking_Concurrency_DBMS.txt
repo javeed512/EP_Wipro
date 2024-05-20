@@ -1,0 +1,17 @@
+Lock Based Concurrency Control Protocol in DBMS
+Last Updated : 05 Feb, 2024
+In a database management system (DBMS), lock-based concurrency control (BCC) is used to control the access of multiple transactions to the same data item. This protocol helps to maintain data consistency and integrity across multiple users. In the protocol, transactions gain locks on data items to control their access and prevent conflicts between concurrent transactions.
+
+
+Concurrency Control Protocols
+allow concurrent schedules, but ensure that the schedules are conflict/view serializable, and are recoverable and maybe even cascadeless. These protocols do not examine the precedence graph as it is being created, instead a protocol imposes a discipline that avoids non-serializable schedules. Different concurrency control protocols provide different advantages between the amount of concurrency they allow and the amount of overhead that they impose. We’ll be learning some protocols which are important for GATE CS. Questions from this topic is frequently asked and it’s recommended to learn this concept. (At the end of this series of articles I’ll try to list all theoretical aspects of this concept for students to revise quickly and they may find the material in one place.) Now, let’s get going: Different categories of protocols:
+
+Lock Based Protocol
+Basic 2-PL
+Conservative 2-PL
+Strict 2-PL
+Rigorous 2-PL
+Graph Based Protocol
+Time-Stamp Ordering Protocol
+Multiple Granularity Protocol
+Multi-version Protocol
