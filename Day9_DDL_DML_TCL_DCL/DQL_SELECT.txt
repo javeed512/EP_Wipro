@@ -1,0 +1,210 @@
+SELECT:
+
+Select command is used to fetch data from one or more tables.
+
+
+syn:  select col1,col2...  from table1,table2  where  [operators for filer] 
+
+	Group By ..  Having clause  ..  Order By;
+
+OPerators for filter:
+
+Filters can be applied to Where clause as well as for Having clause.
+
+
+Operators:
+
+Arithmatic Operators:
++,-,*,/
+Comparison Operators:
+=,>,<,>=,<=,!=    (filters)
+!= , <> , ^=
+
+Logical Operators:
+OR , AND , NOT
+
+
+
+
+
+
+
+
+
+
+
+
+mysql> select * from Employee  where  comm != null;
+Empty set (0.00 sec)
+
+mysql> select * from Employee  where  comm  = null;
+Empty set (0.00 sec)
+
+mysql> select * from Employee  where  comm   IS  null;
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |
+| 110 | anil  |     NULL | NULL | NULL      | 2024-01-19 | NULL |
++-----+-------+----------+------+-----------+------------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from employee where  JOB = 'Developer'  or  JOB = 'Manager';
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |
++-----+-------+----------+------+-----------+------------+------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> select * from Employee  where  comm   IS  null;
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |
+| 110 | anil  |     NULL | NULL | NULL      | 2024-01-19 | NULL |
++-----+-------+----------+------+-----------+------------+------+
+5 rows in set (0.00 sec)
+
+mysql> select * from Employee  where  comm   IS NOT  null;
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |
+| 106 | Jerry | 25000.00 | 3000 | Tester    | 2024-05-20 |  103 |
+| 107 | Ravi  | 22000.00 | 4000 | Tester    | 2024-05-19 |  103 |
++-----+-------+----------+------+-----------+------------+------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE WHERE SALARY >= 30000 AND SALARY <=50000;
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |
++-----+-------+----------+------+-----------+------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE WHERE SALARY BETWEEN 30000 AND  50000;
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |
++-----+-------+----------+------+-----------+------------+------+
+6 rows in set (0.01 sec)
+
+mysql> SELECT * FROM EMPLOYEE WHERE SALARY NOT  BETWEEN 30000 AND  50000;
++-----+-------+----------+------+--------+------------+------+
+| Eid | EName | Salary   | Comm | Job    | DOJ        | Mid  |
++-----+-------+----------+------+--------+------------+------+
+| 106 | Jerry | 25000.00 | 3000 | Tester | 2024-05-20 |  103 |
+| 107 | Ravi  | 22000.00 | 4000 | Tester | 2024-05-19 |  103 |
++-----+-------+----------+------+--------+------------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from employee;
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |
+| 106 | Jerry | 25000.00 | 3000 | Tester    | 2024-05-20 |  103 |
+| 107 | Ravi  | 22000.00 | 4000 | Tester    | 2024-05-19 |  103 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |
+| 110 | anil  |     NULL | NULL | NULL      | 2024-01-19 | NULL |
++-----+-------+----------+------+-----------+------------+------+
+9 rows in set (0.00 sec)
+
+
+LIKE Operator:
+special characters underscored and percentage  (  _  ,  %  )
+
+_ : means any single character (a ,b , A , B , @ , $ , 1 ,2 ,3)
+
+% : means any number of characters (abcd,abc123,123abcd, @#$124,afdsSDKLA)
+
+Like operator is used for pattern matching filters like search name start with 's' or
+name ends with 'm'  or
+doj should have month '01' jan
+
+Examples:
+
+mysql> SELECT * FROM EMPLOYEE WHERE  Ename like 'S%';
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |
++-----+-------+----------+------+-----------+------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE WHERE  Ename like '%m';
++-----+-------+----------+------+-----------+------------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  |
++-----+-------+----------+------+-----------+------------+------+
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |
++-----+-------+----------+------+-----------+------------+------+
+2 rows in set (0.00 sec)
+
+
+mysql> SELECT * FROM EMPLOYEE WHERE  DOJ like  '%-01-%';
++-----+-------+----------+------+---------+------------+------+
+| Eid | EName | Salary   | Comm | Job     | DOJ        | Mid  |
++-----+-------+----------+------+---------+------------+------+
+| 108 | Adam  | 47000.00 | NULL | Analyst | 2024-01-01 |  101 |
+| 110 | anil  |     NULL | NULL | NULL    | 2024-01-19 | NULL |
++-----+-------+----------+------+---------+------------+------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM EMPLOYEE WHERE  Ename like 'a___';
++-----+-------+----------+------+---------+------------+------+
+| Eid | EName | Salary   | Comm | Job     | DOJ        | Mid  |
++-----+-------+----------+------+---------+------------+------+
+| 108 | Adam  | 47000.00 | NULL | Analyst | 2024-01-01 |  101 |
+| 110 | anil  |     NULL | NULL | NULL    | 2024-01-19 | NULL |
++-----+-------+----------+------+---------+------------+------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
