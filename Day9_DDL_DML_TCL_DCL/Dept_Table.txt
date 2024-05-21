@@ -1,0 +1,38 @@
+CREATE TABLE  DEPT 
+(
+DNO  Integer(3)   ,
+DNAME  Varchar(20) ,
+LOCATION  Varchar(30) 
+
+);
+
+
+ALTER TABLE  DEPT  ADD  Constraint  Dept_Dno_PK  Primary Key(DNO);
+
+ALTER TABLE  DEPT  MODIFY DNAME Varchar(30) DEFAULT 'NOT GIVEN';
+
+ALTER TABLE DEPT   ADD CHECK(Location IN ('Hyderabad','Mumbai','Banglore','Chennai','Delhi'));
+
+
+
+mysql> INSERT INTO DEPT Values(10,'Development','Hyderabad')  ,
+    ->   (20,'Testing','Banglore') ,
+    -> (30,'Operation','Mumbai') ,
+    -> (40,'Research','Chennai') ,
+    -> (50,'Sales','Delhi') ;
+
+
+
+
+mysql> UPDATE  Employee SET   DNO = 10  where eid IN (102,104,105);
+
+
+mysql> UPDATE  Employee SET   DNO = 20  where eid IN (103,106,107);
+
+
+mysql> UPDATE  Employee SET   DNO = 30  where eid IN (108);
+
+
+mysql> UPDATE  Employee SET   DNO = 40  where eid IN (101);
+
+

@@ -1,0 +1,130 @@
+
+Group By:
+---------
+It is used to group records based on specific set of  values.
+Group By clause consider Null value also as one of the group.
+
+mysql> select   SUM(salary) from Employee Group By Job;
++-------------+
+| SUM(salary) |
++-------------+
+|    50000.00 |
+|    85000.00 |
+|    65000.00 |
+|    47000.00 |
+|    47000.00 |
+|        NULL |
++-------------+
+
+
+mysql> select  Job,  SUM(salary) from Employee Group By Job;
++-----------+-------------+
+| Job       | SUM(salary) |
++-----------+-------------+
+| President |    50000.00 |
+| Manager   |    85000.00 |
+| Developer |    65000.00 |
+| Tester    |    47000.00 |
+| Analyst   |    47000.00 |
+| NULL      |        NULL |
++-----------+-------------+
+
+mysql> select  EName,  SUM(salary) from Employee Group By Job;  
+
+// above query throw error because Ename should be there in Group By clause.
+
+Note: What ever column used in projection/select should be there in Group By clause. 
+    What ever column used in Group By need not to be there in Select/projection.
+
+
+
+Steps for Where ---> Group by ---> Having ---> Order by
+
+Step1  where:
+
+mysql> select  Job,  salary from Employee where  Job IN ('Developer','Tester','Manager');
++-----------+----------+
+| Job       | salary   |
++-----------+----------+
+| Manager   | 45000.00 |
+| Manager   | 40000.00 |
+| Developer | 30000.00 |
+| Developer | 35000.00 |
+| Tester    | 25000.00 |
+| Tester    | 22000.00 |
++-----------+----------+
+
+
+Step2   Group By
+
+mysql> select  Job , Sum(salary) from Employee where  Job IN ('Developer','Tester','Manager') Group by Job;
++-----------+-------------+
+| Job       | Sum(salary) |
++-----------+-------------+
+| Manager   |    85000.00 |
+| Developer |    65000.00 |
+| Tester    |    47000.00 |
++-----------+-------------+
+3 rows in set (0.00 sec)
+
+
+Step3  Having clause
+
+mysql> select  Job , Sum(salary) from Employee where  Job IN ('Developer','Tester','Manager') Group by Job
+    ->  Having  Sum(salary) > 50000;
++-----------+-------------+
+| Job       | Sum(salary) |
++-----------+-------------+
+| Manager   |    85000.00 |
+| Developer |    65000.00 |
++-----------+-------------+
+2 rows in set (0.00 sec)
+
+Step4  Order By
+
+mysql> select  Job , Sum(salary) from Employee where  Job IN ('Developer','Tester','Manager') Group by Job
+    ->  Having  Sum(salary) > 50000 Order By Job;
++-----------+-------------+
+| Job       | Sum(salary) |
++-----------+-------------+
+| Developer |    65000.00 |
+| Manager   |    85000.00 |
++-----------+-------------+
+
+
+mysql> select Job,Mid , Count(*)  from  Employee  Where Job != 'Manager'  Group By Job ,Mid  Having  Count(*) > 1;
++-----------+------+----------+
+| Job       | Mid  | Count(*) |
++-----------+------+----------+
+| Developer |  102 |        2 |
+| Tester    |  103 |        2 |
++-----------+------+----------+
+
+
+mysql> select Job,  Count(*)  from  Employee  Group By Job;
++-----------+----------+
+| Job       | Count(*) |
++-----------+----------+
+| President |        1 |
+| Manager   |        2 |
+| Developer |        2 |
+| Tester    |        2 |
+| Analyst   |        1 |
+| NULL      |        1 |
++-----------+----------+
+
+Having without Group By can be used:
+
+
+mysql> select  sum(salary)  from employee  having sum(salary) > 50000;
++-------------+
+| sum(salary) |
++-------------+
+|   294000.00 |
++-------------+
+
+
+
+
+
+
