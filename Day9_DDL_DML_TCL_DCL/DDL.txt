@@ -1,0 +1,105 @@
+DDL:
+Data Defination Lang
+It is used whenever we want to work with Database Object's Structures.
+
+CREATE , ALTER , DROP , TRUNCATE, RENAME
+
+Database Objects like Tables,Views,Databases,Users,Indexes,Synonyms etc
+
+CREATE:
+-------
+We can create any object in DB.
+CREATE TABLE Products (pid integer(3),pname varchar(20),price decimal(7,2));
+
+
+
+INSERT INTO Products values(1,'mobile',15000,current_date,'IPhone');
+INSERT INTO Products values(2,'laptop',25000,current_date,'Dell') , (3,'Books',1200,current_date,'BlackBook') , (4,'Toys',1500,current_date,'KidsZee');
+
+
+
+
+
+ALTER:
+------
+We can use ALTER to modify structures of DB Objects like Table
+
+ALTER command has 3 options
+i.  ADD
+ii. MODIFY
+iii.DROP
+
+ALTER with ADD:
+
+ALTER TABLE PRODUCTS add(DOP Date , Brand varchar(20));
+
+
+ALTER  TABLE PRODUCTS ADD CONSTRAINT  Products_Pid_PK PRIMARY KEY(pid);
+---------------------
+
+ALTER with MODIFY:
+
+ALTER TABLE  PRODUCTS modify pname  varchar(30);
+
+
+ALTER with DROP:
+
+ALTER TABLE Products  DROP Column Brand;
+ALTER  TABLE  Products DROP  Constraint  Products_Pid_PK;
+
+ALTER with RENAME:
+
+ALTER TABLE Products RENAME Products_Info;
+
+ALTER TABLE Products RENAME Column Pname to Product_Name;
+
+------------------------------------------
+
+TRUNCATE  
+
+It will truncate/delete all the records from the table;  
+
+TRUNCATE  TABLE Products;
+
+----------------------------------------
+
+DROP  
+
+This command is used to drop table or any other DB objects permanently.
+
+DROP TABLE Products;
+
+DROP Database db_name;
+DROP User  user_name;
+
+---------------------------------------------------------
+RENAME 
+
+It is used to RENAME DB Objects.
+RENAME TABLE  OldName TO NewName;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

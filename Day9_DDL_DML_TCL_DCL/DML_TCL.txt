@@ -1,0 +1,136 @@
+DML:
+Data Manipulation Lang:
+
+INSERT , UPDATE , DELETE 
+
+These commands are used to manage/manipulate records or data in tables.
+
+INSERT Command:
+It is used to create or insert new records in tables.
+
+syn1:   INSERT INTO Table_Name values(v1,v2,v3,...);
+syn2:   INSERT INTO Table_Name(c1,c2,c3)   values(v1,v2,v3);//remaining column values will taken as null
+syn3:  INSERT INTO Table_Name(v1,v2,v3,..)  , (v11,v12,v13,...) , (v21,v22,v23,...); // multiple records
+
+Examples:
+
+INSERT INTO Products values(1,'mobile',15000,current_date,'IPhone');
+
+INSERT INTO Products values(2,'laptop',25000,current_date,'Dell') , (3,'Books',1200,current_date,'BlackBook') , (4,'Toys',1500,current_date,'KidsZee');
+
+INSERT INTO Products(pid,product_name) values(5,'Keyboard');
+
+
+
+
+
+UPDATE:
+--------
+Update command is used to modify existing data in tables.
+
+syn:  update table_name set column1= value1 , column2 = value2 Where condition ;
+
+Note: IN mysql software DB all DML commands are auto-commit means system controls all transactions
+
+Ex:  update products  set price = 3000 , brand = 'Dell' where  pid = 5;
+
+update products set price = 100; // this query updates all prices = 100 in products table;
+
+rollback;  // it is useless , it wont rollback any thing 
+
+
+
+DELETE:
+-------
+Delete command is used to delete records from the tables.
+
+
+syn: delete table_name where condition;
+
+Ex1: delete from products; // it will delete all the records from products table and cannot be rollback
+Ex2: delete from products where pid = 5;// only record pid = 5 deleted
+
+rollback;
+
+
+begin transaction;
+
+insert;
+update;
+delete;
+
+commit/rollback;
+
+
+
+TCL:
+Transaction control Lang:
+COMMIT , ROLLBACK , SAVEPOINT
+
+These commands are used to control transactions by user/developer.
+
+Note: In mysql software DML is auto-commit by default because system controls transactions by default.
+
+In mysql if we want to control transactions then  need to start transaction manually and end transaction either using commit/rollback.
+Ex:
+
+start transaction;
+
+INSERT;
+UPDATE;
+DELETE;
+
+commit; // tosave permanently
+rollback; // to perform undo
+
+
+
+savepoint:
+----------
+it is used just like a book mark during DML Operations.
+
+start transaction;
+
+insert;
+insert;
+insert;
+insert;
+
+savepoint s1;
+
+
+update;
+update;
+
+savepoint s2;
+
+insert;
+insert;
+
+savepoint s3;
+
+rollback s2;
+
+commit s1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
