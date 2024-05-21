@@ -120,3 +120,22 @@ INSERT INTO Employee(Eid,Ename,Doj)   values(110,'anil','2024-01-19');
 select * from Employee;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
