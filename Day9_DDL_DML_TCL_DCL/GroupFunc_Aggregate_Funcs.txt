@@ -1,0 +1,117 @@
+Group Functions or Aggregate Functions:
+
+These are the functions take set of values as input (one column) as return single value as output.
+
+In this input and output data type may or may not be same.
+
+Note: Group functions always ignore Null values. But Group By clause consider Null Values for grouping.
+
+SUM , AVG , MIN , MAX , COUNT
+
+SUM:
+----
+It is to find sum of numeric values
+It is used only with Numberic data type.
+
+select Sum(salary) from Employee;
+
+select Sum(comm) from Employee;
+
+AVG:
+----
+It is to find average  of numeric values
+It is used only with Numberic data type.
+
+select AVG(salary)  from Employee;
+
+MIN:
+----
+It is used to find min value from any column.
+It is used for Numbers and Dates.
+mysql> select MIN(salary) from Employee;
++-------------+
+| MIN(salary) |
++-------------+
+|    22000.00 |
++-------------+
+
+
+mysql> select MIN(DOJ) FROM EMPLOYEE;
++------------+
+| MIN(DOJ)   |
++------------+
+| 2020-12-01 |
++------------+
+
+
+
+
+MAX:
+----
+It is used to find max value from any column.
+It is used for Numbers and Dates.
+
+mysql> select MAX(salary) from Employee;
++-------------+
+| MAX(salary) |
++-------------+
+|    50000.00 |
++-------------+
+
+
+mysql> select MAX(DOJ) FROM EMPLOYEE;
++------------+
+| MAX(DOJ)   |
++------------+
+| 2024-05-20 |
++------------+
+
+
+COUNT:
+------
+It is used to find the count of specific values or records  from table.
+
+mysql> SELECT COUNT(*)  from Employee Where Comm IS Null;
++----------+
+| COUNT(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> SELECT COUNT(*)  from Employee Where Comm IS NOT Null;
++----------+
+| COUNT(*) |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*)  from Employee ;
++----------+
+| COUNT(*) |
++----------+
+|        9 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(*)  from Employee  WHERE JOB = 'Developer';
++----------+
+| COUNT(*) |
++----------+
+|        2 |
++----------+
+
+mysql> select Count(salary) from employee;
++---------------+
+| Count(salary) |
++---------------+
+|             8 |
++---------------+
+
+
+
+
+
+
+

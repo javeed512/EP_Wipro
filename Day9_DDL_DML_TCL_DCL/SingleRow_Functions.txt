@@ -1,0 +1,407 @@
+Table of Contents
+
+MySQL Server Functions
+MySQL String Functions
+MySQL Date Functions
+MySQL Numeric Functions
+MySQL Server Functions
+1. If Function: IF()
+The if function returns one value if a condition is true and another value if the condition is false.
+
+If Function Example:
+SELECT IF(10 > 5, 'Greater than', 'Less than or equal to');
+
+Output:
+
+ 'Greater than'
+
+2. Database Function: DATABASE()
+The database function returns the name of the current database.
+
+Database Function Example
+SELECT Database(); 
+
+Output:
+
+DatabaseName baseball_team
+
+3. Binary Function: BIN()
+The binary function converts a decimal number to a binary number.
+
+Binary Function Example
+SELECT Bin(10); 
+
+Output:
+
+1010
+
+4. User Function: USER()
+The user function returns the current user name and host name.
+
+User Function Example
+SELECT USER(); 
+
+Output:
+
+root@localhost
+
+5. Convert Function: CONVERT()
+This function converts a value from one data type to another.
+
+Conver Function Example
+SELECT CONVERT('5', UNSIGNED); 
+
+Output:
+
+5
+
+6. Version Function: VERSION()
+The version function returns the version of the MySQL server.
+
+Version Function Example
+SELECT Version(); 
+
+Output:
+
+8.0.23-0ubuntu0.20.04.1
+
+7. Lead Function: LEAD()
+The lead function returns the value of a row further down the result set.
+
+Lead Function Example
+SELECT NAME,
+       Lead(NAME)
+         OVER (
+           ORDER BY id) AS next_name
+FROM   players; 
+
+Output:
+
+name       | next_name
+-----------|-----------
+John Smith | Jane Doe
+Jane Doe   | Michael Johnson
+Michael... | Sarah Thompson
+Sarah...   | Tim Lee
+Tim Lee    | NULL
+
+8. Sleep Function: SLEEP()
+The sleep function delays execution for a specified number of seconds.
+
+Sleep Function Example
+SELECT Sleep(5); 
+
+Output:
+
+Empty set (0.00 sec)
+
+Note: Some of these functions can be used with both SQL and MySQL. You can find more SQL functions in our ultimate guide here.
+
+MySQL String Functions
+9. Match Function: MATCH()
+The match function searches a string for a pattern and returns the position of the match.
+
+Match Function Example
+SELECT Match('Hello World', 'World'); 
+
+Output:
+
+7
+
+10. Lower Function: LOWER()
+The lower function returns a string with all characters converted to lowercase.
+
+Lower Function Example
+SELECT Lower('Hello World'); 
+
+Output:
+
+'hello world'
+
+11. Upper Function: UPPER()
+The upper function returns a string with all characters converted to uppercase.
+
+Upper Function Example
+SELECT Upper('Hello World'); 
+
+Output:
+
+'HELLO WORLD'
+
+12. Left Function: LEFT()
+The left function returns a specified number of characters from the beginning of a string.
+
+Left Function Example
+SELECT LEFT('Hello World', 5); 
+
+Output:
+
+Hello'
+
+13. Right Function: RIGHT()
+The right function extracts a specified number of characters from the right side of a string.
+
+Right Function Example:
+SELECT RIGHT('apple', 3); 
+
+Output:
+
+ 'ple'
+
+14. Space Function: SPACE()
+The space function returns a string containing a specified number of space characters.
+
+Space Function Example
+SELECT Space(5); 
+
+Output:
+
+'     '
+
+15. Locate Function: LOCATE()
+The locate function returns the position of the first occurrence of a substring in a string.
+
+Locate Function Example
+SELECT Locate('o', 'Hello World'); 
+
+Output:
+
+5
+
+16. Insert Function: INSERT()
+This function inserts a string within another string at the specified position.
+
+Insert Function Example
+SELECT INSERT('Hello World', 6, 0, 'My '); 
+
+Output:
+
+'Hello My World'
+
+17. Field Function: FIELD()
+The field function returns the index position of a string within a list of strings.
+
+Field Function Example
+SELECT Field('World', 'Hello,World,SQL'); 
+
+Output:
+
+2
+
+18. Repeat Function: REPEAT()
+The repeat function eturns a string consisting of a specified number of repetitions of another string.
+
+Repeat Function Example
+SELECT Repeat('', 3); 
+
+Output:
+
+**'
+
+MySQL Date Functions
+19. Time Stamp Function: TIMESTAMP()
+The time stamp function returns the current date and time.
+
+Time Stamp Function Example:
+SELECT TIMESTAMP();
+
+Output:
+
+ '2023-05-05 12:00:00'
+
+20. Add Date Function: ADDDATE()
+The add date function adds a specified number of days to a date.
+
+Add Date Function Example
+SELECT Adddate('2022-05-09', INTERVAL 5 day); 
+
+Output:
+
+2022-05-14
+
+21. Current Date: CURDATE()
+The current date function returns the current date of the year. 
+
+Current Date Function Example
+SELECT Curdate(); 
+
+Output:
+
+2023-05-9
+
+22. Current Time: CURTIME()
+The current time function returns the current time of the day.
+
+Current Time Function
+SELECT Curtime() 
+
+Output:
+
+22:30:45
+
+23. Date Function: DATE()
+The date function returns the date part from a datetime value.
+
+Date Function Example
+SELECT Date('2023-05-09 22:30:45') 
+
+Output:
+
+2023-05-09
+
+24. Day Function: DAY()
+The day function returns the day of the month from a date value.
+
+Day Function Example
+SELECT Day('2023-05-09') 
+
+Output:
+
+9
+
+25. Hour Function: HOUR()
+The hour function extracts the hour from a time value.
+
+Hour Function Example
+SELECT Hour('22:30:45'); 
+
+Output:
+
+22
+
+26. Week Function: WEEK()
+The week function returns the week number for a date value.
+
+Week Function Example
+SELECT Week('2023-05-09') 
+
+Output:
+
+19
+
+27. Year Function: YEAR()
+The year function returns the year from a date value.
+
+Year Function Example
+SELECT Year('2023-05-09') 
+
+Output:
+
+2023
+
+28. Time Function: TIME()
+The time function returns the time part from a datetime value.
+
+Time Function Example
+SELECT Time('2023-05-09 22:30:45') 
+
+Output:
+
+22:30:45
+
+MySQL Numeric Functions
+29. Round Function: ROUND()
+The round function rounds a number to a specified number of decimal places.
+
+Round Function Example:
+SELECT Round(3.14159, 2); 
+
+Output: 
+
+3.14
+
+30. Min Function: MIN()
+The min function returns the minimum value from a set of values.
+
+Min Function Example:
+SELECT Min(5, 10, 15, 20); 
+
+Output: 
+
+5
+
+31. Floor Function: FLOOR()
+The floor function rounds a number down to the nearest integer.
+
+Floor Function Example:
+SELECT Floor(3.8); 
+
+Output: 
+
+3
+
+32. Mod Function: MOD()
+The modulo or mod function in MySQL provides the remainder of a number divided by another number.
+
+Mod Function Example:
+SELECT Mod(7, 3); 
+
+Output:
+
+1
+
+/*The output would be 2 because 7 divided by 3 creates a remainder of 1.
+
+33. Ceil Function: CEIL()
+The ceil function in MySQL rounds a given number up to the nearest integer.
+
+Ceil Function Example:
+SELECT Ceil(44.6); 
+
+Output:
+
+45
+
+/* This example rounds the number 44.6 to the nearest integer, which would be 45.
+
+34. Absolute Value: ABS()
+The absolute value function returns the absolute value of a number.
+
+Absolute Value Function Example
+SELECT Abs(-10) 
+
+Output:
+
+10
+
+35. Exponent Function: EXP()
+This function returns the value of the constant e raised to the power of a specified number.
+
+Exponent Function Example
+SELECT Exp(2) 
+
+Output:
+
+7.3890560989306495
+
+36. Pi Function: PI()
+The pi function returns the value of pi to 16 decimal places
+
+Pi Function Example
+SELECT Pi() 
+
+Output:
+
+3.141592653589793
+
+37. Logarithm Function: LN()
+This function returns the natural logarithm of a number.
+
+Logarithm Function Example
+SELECT Ln(2) 
+
+Output:
+
+0.6931471805599453
+
+38. Count Function: COUNT()
+The count function returns the number of rows that match a specified condition.
+
+Count Function Example
+SELECT Count(*)
+FROM   students
+WHERE  age > 18 
+
+Output:
+
+5
