@@ -1,0 +1,138 @@
+Sub Queries:
+
+Writing query inside another query is known as sub-query/nested query.
+
+In this , always sub-query executed first and output of sub query will be used as input by outer / parent query.
+
+
+syn: select  columns  from  Table1  where  id = ( select id from Table2 );
+
+mysql> select * from Employee where  salary > (select salary from Employee where ename = 'Tom');
+
+SubQueries can be used for same table or for diff tables.
+Ex: When we want to fetch data from one table but conditions available in second table then sub query can be used.
+
+mysql> select * from employee  where salary >ANY  
+				(select   COMM  from  Employee  where Job = 'Developer');
+
+
+mysql> select * from Employee where salary >ANY (select  sum(salary)  from Employee where Job = 'Tester');
+
+
+mysql> SELECT * FROM EMPLOYEE WHERE  DNO = (SELECT DNO FROM DEPT WHERE LOCATION = 'Chennai');
++-----+-------+----------+------+-----------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+-----------+------------+------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |   40 |
++-----+-------+----------+------+-----------+------------+------+------+
+1 row in set (0.00 sec)
+
+step1
+mysql>  (SELECT DNO FROM DEPT WHERE LOCATION = 'Chennai');
++-----+
+| DNO |
++-----+
+|  40 |
++-----+
+1 row in set (0.00 sec)
+
+step2
+mysql> SELECT * FROM EMPLOYEE WHERE  DNO = 40;
++-----+-------+----------+------+-----------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+-----------+------------+------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |   40 |
++-----+-------+----------+------+-----------+------------+------+------+
+
+Multi-Levels in Sub queries:
+----------------------------
+mysql> SELECT * FROM EMPLOYEE WHERE  DNO =                                                                                                     (SELECT DNO FROM DEPT WHERE LOCATION =                                                                               (SELECT LOCATION FROM DEPT WHERE DNAME = 'RESEARCH'));
+
+
+
+
+
+
+Single Row Operators:
+= , !=  , > ,< , >= ,<= 
+
+
+Multi Row Operators:
+
+IN , =ANY , >ANY , <ANY  , >ALL , <ALL 
+
+
+mysql> select * from employee  where salary >ANY  (select   salary from  Employee  where Job = 'Manager');
++-----+-------+----------+------+-----------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+-----------+------------+------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |   40 |
+| 102 | Smith | 45000.00 | NULL | Manager   | 2021-09-23 |  101 |   10 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |   30 |
++-----+-------+----------+------+-----------+------------+------+------+
+
+mysql> select * from employee  where salary  <ANY  (select   salary from  Employee  where Job = 'Manager');
++-----+-------+----------+------+-----------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+-----------+------------+------+------+
+| 103 | Ford  | 40000.00 | NULL | Manager   | 2022-04-15 |  101 |   20 |
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |   10 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |   10 |
+| 106 | Jerry | 25000.00 | 3000 | Tester    | 2024-05-20 |  103 |   20 |
+| 107 | Ravi  | 22000.00 | 4000 | Tester    | 2024-05-19 |  103 |   20 |
++-----+-------+----------+------+-----------+------------+------+------+
+
+mysql> select * from employee  where salary  IN  (select   salary from  Employee  where Job = 'Manager');
++-----+-------+----------+------+---------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job     | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+---------+------------+------+------+
+| 102 | Smith | 45000.00 | NULL | Manager | 2021-09-23 |  101 |   10 |
+| 103 | Ford  | 40000.00 | NULL | Manager | 2022-04-15 |  101 |   20 |
++-----+-------+----------+------+---------+------------+------+------+
+
+
+mysql> select * from employee  where salary  >ALL  (select   salary from  Employee  where Job = 'Manager');
++-----+-------+----------+------+-----------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+-----------+------------+------+------+
+| 101 | King  | 50000.00 | NULL | President | 2020-12-01 | NULL |   40 |
+| 108 | Adam  | 47000.00 | NULL | Analyst   | 2024-01-01 |  101 |   30 |
++-----+-------+----------+------+-----------+------------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from employee  where salary  <ALL  (select   salary from  Employee  where Job = 'Manager');
++-----+-------+----------+------+-----------+------------+------+------+
+| Eid | EName | Salary   | Comm | Job       | DOJ        | Mid  | DNO  |
++-----+-------+----------+------+-----------+------------+------+------+
+| 104 | Tom   | 30000.00 | 1500 | Developer | 2023-10-18 |  102 |   10 |
+| 105 | Scott | 35000.00 | 1000 | Developer | 2023-12-25 |  102 |   10 |
+| 106 | Jerry | 25000.00 | 3000 | Tester    | 2024-05-20 |  103 |   20 |
+| 107 | Ravi  | 22000.00 | 4000 | Tester    | 2024-05-19 |  103 |   20 |
++-----+-------+----------+------+-----------+------------+------+------+
+
+
+mysql> select * from Employee having salary >ANY (select  sum(salary)  from Employee where Job = 'Tester');
+
+
+Extras:
+------
+Sub query can be written in different places with in sql statement.
+
+1.  select * from table where  col =  (select * from table2)  or having  col = (select * from table3);
+
+2.  select col1,col2,  (select sum(salary) from table)  from table;
+
+mysql> select    ename,salary , ( select sum(salary) from Employee ) - salary as Budget_Left  from Employee;
+
+
+3.  select  col1,col2,.... from  (select * from table)  t1;
+
+mysql> select  eid,ename,salary,job,doj   from  (select eid,ename,salary,job from Employee)  E;
+ERROR 1054 (42S22): Unknown column 'doj' in 'field list'
+
+
+mysql> select  eid,ename,salary,job,doj   from  (select eid,ename,salary,job,doj  from Employee)  E;
+
+
+
+

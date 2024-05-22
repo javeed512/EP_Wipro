@@ -90,6 +90,52 @@ mysql> SELECT  eid , ename , salary , job , D.dno , dname , location   FROM     
 
 
 
+SELF JOINS:
+----------
+JOINING table  to itself is known as self-join.
+
+
+mysql> select  E.eid,E.mid , M.eid, M.mid   from Employee E  , Employee M  WHERE E.MID = M.EID;
++-----+------+-----+------+
+| eid | mid  | eid | mid  |
++-----+------+-----+------+
+| 102 |  101 | 101 | NULL |
+| 103 |  101 | 101 | NULL |
+| 104 |  102 | 102 |  101 |
+| 105 |  102 | 102 |  101 |
+| 106 |  103 | 103 |  101 |
+| 107 |  103 | 103 |  101 |
+| 108 |  101 | 101 | NULL |
++-----+------+-----+------+
+7 rows in set (0.00 sec)
+
+mysql> select  E.ENAME , M.ENAME  from Employee E  , Employee M  WHERE E.MID = M.EID;
++-------+-------+
+| ENAME | ENAME |
++-------+-------+
+| Smith | King  |
+| Ford  | King  |
+| Tom   | Smith |
+| Scott | Smith |
+| Jerry | Ford  |
+| Ravi  | Ford  |
+| Adam  | King  |
++-------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select  E.ENAME ,E.SALARY,  M.ENAME , M.SALARY from Employee E  , Employee M  WHERE E.MID = M.EID;
++-------+----------+-------+----------+
+| ENAME | SALARY   | ENAME | SALARY   |
++-------+----------+-------+----------+
+| Smith | 45000.00 | King  | 50000.00 |
+| Ford  | 40000.00 | King  | 50000.00 |
+| Tom   | 30000.00 | Smith | 45000.00 |
+| Scott | 35000.00 | Smith | 45000.00 |
+| Jerry | 25000.00 | Ford  | 40000.00 |
+| Ravi  | 22000.00 | Ford  | 40000.00 |
+| Adam  | 47000.00 | King  | 50000.00 |
++-------+----------+-------+----------+
+
 
 
 
