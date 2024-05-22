@@ -1,0 +1,23 @@
+
+Corelated Subquery:
+
+Sub query used in Create for creating tables.
+Sub qury  used in  update or delete statements 
+known as corelated sub query.
+
+
+Examples:
+
+mysql> CREATE TABLE emp1 AS  (select *  from employee) ;  // table with all columns and records
+
+mysql> CREATE TABLE emp1 AS  (select eid,ename,job,salary from employee) ;
+							 // table with 4 columns , all records
+mysql> CREATE TABLE emp3 AS  (select *  from employee  where 1 = 2)  ;
+
+
+Update and Delete
+------------------
+
+mysql>  update  employee set salary = salary + 1000  where  dno IN                                                    (select dno from dept where location IN ('Chennai','Banglore'));
+
+mysql>  delete from Employee  where  dno IN                                               						     (select dno from dept where location IN ('Chennai','Banglore'));

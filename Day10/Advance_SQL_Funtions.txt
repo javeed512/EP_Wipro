@@ -1,0 +1,345 @@
+
+
+Limit:
+
+mysql> select * from Employee limit 3; // it shows first 3 records only
+
+mysql> select * from Employee  order by eid desc  limit 3; // last 3 records
+
+
+CASE:
+------
+
+mysql> select  ENAME, JOB ,   CASE  Job
+	WHEN  'Developer'  THEN 'WELCOME TO DEVELOPMENT'
+  	WHEN  'Tester'     THEN 'WELCOME TO Testing'
+	WHEN  'Manager'  THEN 'WELCOME TO Management'
+	ELSE  'OTHER DEPTs'  
+	END  as Message
+	FROM EMPLOYEE;
+		
+Windows Functions:
+-------------------
+A window function in MySQL used to do a calculation across a set of rows that are related to the current row. The current row is that row for which function evaluation occurs. Window functions perform a calculation similar to a calculation done by using the aggregate functions. But, unlike aggregate functions that perform operations on an entire table, window functions do not produce a result to be grouped into one row. It means window functions perform operations on a set of rows and produces an aggregated value for each row. Therefore each row maintains the unique identities.
+
+
+OVER() :
+---------
+It is used to perform aggregate function for all individual rows.
+
+mysql> select ename, dno , sum(salary) OVER(Partition by dno)  as Total  from Employee order by dno;
++-------+------+-----------+
+| ename | dno  | Total     |
++-------+------+-----------+
+| anil  | NULL |      NULL |
+| Smith |   10 | 110000.00 |
+| Tom   |   10 | 110000.00 |
+| Scott |   10 | 110000.00 |
+| Ford  |   20 |  87000.00 |
+| Jerry |   20 |  87000.00 |
+| Ravi  |   20 |  87000.00 |
+| Adam  |   30 |  47000.00 |
+| King  |   40 |  50000.00 |
+
+
+
+mysql> select ename, dno , sum(salary) OVER(Partition by dno)  as Total  from Employee order by dno;
++-------+------+-----------+
+| ename | dno  | Total     |
++-------+------+-----------+
+| anil  | NULL |      NULL |
+| Smith |   10 | 110000.00 |
+| Tom   |   10 | 110000.00 |
+| Scott |   10 | 110000.00 |
+| Ford  |   20 |  87000.00 |
+| Jerry |   20 |  87000.00 |
+| Ravi  |   20 |  87000.00 |
+| Adam  |   30 |  47000.00 |
+| King  |   40 |  50000.00 |
++-------+------+-----------+
+
+mysql> select  distinct dno ,sum(salary) Over() as budget , sum(salary) OVER(Partition by dno) as Total, count(salary) OVER(Partition by dno)  as Count  from Employee order by dno;
++------+-----------+-----------+-------+
+| dno  | budget    | Total     | Count |
++------+-----------+-----------+-------+
+| NULL | 294000.00 |      NULL |     0 |
+|   10 | 294000.00 | 110000.00 |     3 |
+|   20 | 294000.00 |  87000.00 |     3 |
+|   30 | 294000.00 |  47000.00 |     1 |
+|   40 | 294000.00 |  50000.00 |     1 |
++------+-----------+-----------+-------+
+
+
+Table:
+
+CREATE TABLE sales_table (  
+    CustomerName VARCHAR(45) NOT NULL,  
+    Year INT NOT NULL,  
+    Country VARCHAR(45) NOT NULL,  
+    Product VARCHAR(45) NOT NULL,  
+    Sale DECIMAL(12,2) NOT NULL,  
+    PRIMARY KEY(CustomerName, Year)    
+);  
+
+
+
+INSERT INTO sales_table VALUES  
+('Stephen', 2017, 'India', 'Laptop', 10000),    
+('Stephen', 2018, 'India', 'Laptop', 15000),    
+('Stephen', 2019, 'India', 'TV', 20000),    
+('Bob', 2017, 'US', 'Computer', 15000),    
+('Bob', 2018, 'US', 'Computer', 10000),    
+('Bob', 2019, 'US', 'TV', 20000),    
+('Mandy', 2017, 'Canada', 'Mobile', 20000),    
+('Mandy', 2018, 'Canada', 'Calculator', 1500),    
+('Mandy', 2019, 'Canada', 'Mobile', 25000);  
+
+
+
+LEAD():
+-------
+It calculate and  show current row  value along with succeeding row value for particular column.
+
+mysql> select  Year , Product , Sale , sum(sale) Over(Partition by Year) total , Lead(sale,1) Over(Partition By Year  Order by Country) As Next_Sale from  Sales_table;
++------+------------+----------+----------+-----------+
+| Year | Product    | Sale     | total    | Next_Sale |
++------+------------+----------+----------+-----------+
+| 2017 | Mobile     | 20000.00 | 45000.00 |  10000.00 |
+| 2017 | Laptop     | 10000.00 | 45000.00 |  15000.00 |
+| 2017 | Computer   | 15000.00 | 45000.00 |      NULL |
+| 2018 | Calculator |  1500.00 | 26500.00 |  15000.00 |
+| 2018 | Laptop     | 15000.00 | 26500.00 |  10000.00 |
+| 2018 | Computer   | 10000.00 | 26500.00 |      NULL |
+| 2019 | Mobile     | 25000.00 | 65000.00 |  20000.00 |
+| 2019 | TV         | 20000.00 | 65000.00 |  20000.00 |
+| 2019 | TV         | 20000.00 | 65000.00 |      NULL |
++------+------------+----------+----------+-----------+
+
+
+
+
+mysql> select  ename, salary ,job, Lead(salary,1) over(partition by job order by doj)  next_emp_sal from Employee;
++-------+----------+-----------+--------------+
+| ename | salary   | job       | next_emp_sal |
++-------+----------+-----------+--------------+
+| anil  |     NULL | NULL      |         NULL |
+| Adam  | 47000.00 | Analyst   |         NULL |
+| Tom   | 30000.00 | Developer |     35000.00 |
+| Scott | 35000.00 | Developer |         NULL |
+| Smith | 45000.00 | Manager   |     40000.00 |
+| Ford  | 40000.00 | Manager   |         NULL |
+| King  | 50000.00 | President |         NULL |
+| Ravi  | 22000.00 | Tester    |     25000.00 |
+| Jerry | 25000.00 | Tester    |         NULL |
++-------+----------+-----------+--------------+
+
+
+LAG():
+--------
+
+It will evaluate value of current row and shows data from current row along with previous row data for paticular column.
+
+mysql> select  ename, salary , job , Lag(salary,1) over(partition by job)  next_emp_sal from Employee;
++-------+----------+-----------+--------------+
+| ename | salary   | job       | next_emp_sal |
++-------+----------+-----------+--------------+
+| anil  |     NULL | NULL      |         NULL |
+| Adam  | 47000.00 | Analyst   |         NULL |
+| Scott | 35000.00 | Developer |         NULL |
+| Tom   | 30000.00 | Developer |     35000.00 |
+| Ford  | 40000.00 | Manager   |         NULL |
+| Smith | 45000.00 | Manager   |     40000.00 |
+| King  | 50000.00 | President |         NULL |
+| Jerry | 25000.00 | Tester    |         NULL |
+| Ravi  | 22000.00 | Tester    |     25000.00 |
++-------+----------+-----------+--------------+
+9 rows in set (0.00 sec)
+
+mysql> select  Year , Product , Sale , Lag(sale,1) Over(Partition By Year  Order by Country) As Next_Sale from  Sales_table;
++------+------------+----------+-----------+
+| Year | Product    | Sale     | Next_Sale |
++------+------------+----------+-----------+
+| 2017 | Mobile     | 20000.00 |      NULL |
+| 2017 | Laptop     | 10000.00 |  20000.00 |
+| 2017 | Computer   | 15000.00 |  10000.00 |
+| 2018 | Calculator |  1500.00 |      NULL |
+| 2018 | Laptop     | 15000.00 |   1500.00 |
+| 2018 | Computer   | 10000.00 |  15000.00 |
+| 2019 | Mobile     | 25000.00 |      NULL |
+| 2019 | TV         | 20000.00 |  25000.00 |
+| 2019 | TV         | 20000.00 |  20000.00 |
++------+------------+----------+-----------+
+
+
+
+
+
+
+FIRST_VALUE()
+
+
+
+LAST_VALUE()
+
+
+
+
+SELECT Year, Product, Country, Sale,       
+FIRST_VALUE(Sale) OVER(PARTITION BY Country ORDER BY Country) first_sale,  
+LAST_VALUE(Sale) OVER(PARTITION BY Country ORDER BY Country) last_sale      
+FROM Sales_table;   
+
++------+------------+---------+----------+------------+-----------+
+| Year | Product    | Country | Sale     | first_sale | last_sale |
++------+------------+---------+----------+------------+-----------+
+| 2017 | Mobile     | Canada  | 20000.00 |   20000.00 |  25000.00 |
+| 2018 | Calculator | Canada  |  1500.00 |   20000.00 |  25000.00 |
+| 2019 | Mobile     | Canada  | 25000.00 |   20000.00 |  25000.00 |
+| 2017 | Laptop     | India   | 10000.00 |   10000.00 |  20000.00 |
+| 2018 | Laptop     | India   | 15000.00 |   10000.00 |  20000.00 |
+| 2019 | TV         | India   | 20000.00 |   10000.00 |  20000.00 |
+| 2017 | Computer   | US      | 15000.00 |   15000.00 |  20000.00 |
+| 2018 | Computer   | US      | 10000.00 |   15000.00 |  20000.00 |
+| 2019 | TV         | US      | 20000.00 |   15000.00 |  20000.00 |
++------+------------+---------+----------+------------+-----------+
+
+Ranking Functions:
+------------------
+ROW_NUMBER():
+=============
+we can use the ROW_NUMBER() function to assign a sequence number for each record within a partition using the below statement:
+
+select Year,row_number() over(partition by year) as row_num from Sales_table;
+
+ROW_NUMBER(): It assigns a row number to each record in the table. Consecutive numbers are assigned to all the records in the table. Ranking begins with 1 in each table. If the user implements a partition, the first row will assign 1. No two rows in the same partition can have the same row number.
+
+
+mysql> select  ename , job , row_number()  over(partition by dno)  as row_num from Employee;
++-------+-----------+---------+
+| ename | job       | row_num |
++-------+-----------+---------+
+| anil  | NULL      |       1 |
+| Smith | Manager   |       1 |
+| Tom   | Developer |       2 |
+| Scott | Developer |       3 |
+| Ford  | Manager   |       1 |
+| Jerry | Tester    |       2 |
+| Ravi  | Tester    |       3 |
+| Adam  | Analyst   |       1 |
+| King  | President |       1 |
++-------+-----------+---------+
+9 rows in set (0.00 sec)
+
+mysql> select dno , ename , job , row_number()  over(partition by dno)  as row_num from Employee;
++------+-------+-----------+---------+
+| dno  | ename | job       | row_num |
++------+-------+-----------+---------+
+| NULL | anil  | NULL      |       1 |
+|   10 | Smith | Manager   |       1 |
+|   10 | Tom   | Developer |       2 |
+|   10 | Scott | Developer |       3 |
+|   20 | Ford  | Manager   |       1 |
+|   20 | Jerry | Tester    |       2 |
+|   20 | Ravi  | Tester    |       3 |
+|   30 | Adam  | Analyst   |       1 |
+|   40 | King  | President |       1 |
++------+-------+-----------+---------+
+
+
+
+
+
+
+RANK(): The name function is implemented to assign a rank to all the records within every partition. Rank is assigned such that the first row in each partition is Rank 1. The next record is assigned the next consecutive number as its rank. If two rows have the same value, the same rank will be assigned to the record. The next rank will be skipped when two rows have the same rank.
+
+mysql> select ename, salary , Rank() Over(order by salary desc)  ranks  from Employee;
++-------+----------+-------+
+| ename | salary   | ranks |
++-------+----------+-------+
+| King  | 50000.00 |     1 |
+| Adam  | 47000.00 |     2 |
+| Smith | 45000.00 |     3 |
+| Ford  | 40000.00 |     4 |
+| Scott | 35000.00 |     5 |
+| Tom   | 30000.00 |     6 |
+| Jerry | 25000.00 |     7 |
+| Ravi  | 22000.00 |     8 |
+| anil  |     NULL |     9 |
++-------+----------+-------+
+9 rows in set (0.00 sec)
+
+mysql> select ename, salary ,comm , Rank() Over(order by comm desc)  ranks  from Employee;
++-------+----------+------+-------+
+| ename | salary   | comm | ranks |
++-------+----------+------+-------+
+| Ravi  | 22000.00 | 4000 |     1 |
+| Jerry | 25000.00 | 3000 |     2 |
+| Tom   | 30000.00 | 1500 |     3 |
+| Scott | 35000.00 | 1000 |     4 |
+| King  | 50000.00 | NULL |     5 |
+| Smith | 45000.00 | NULL |     5 |
+| Ford  | 40000.00 | NULL |     5 |
+| Adam  | 47000.00 | NULL |     5 |
+| anil  |     NULL | NULL |     5 |
++-------+----------+------+-------+
+
+
+mysql> select ename, salary ,comm , Rank() Over(order by comm desc)  ranks  from Employee;
++-------+----------+------+-------+
+| ename | salary   | comm | ranks |
++-------+----------+------+-------+
+| Ravi  | 22000.00 | 4000 |     1 |
+| Ford  | 40000.00 | 3000 |     2 |
+| Jerry | 25000.00 | 3000 |     2 |
+| Tom   | 30000.00 | 1500 |     4 |
+| Scott | 35000.00 | 1000 |     5 |
+| King  | 50000.00 | NULL |     6 |
+| Smith | 45000.00 | NULL |     6 |
+| Adam  | 47000.00 | NULL |     6 |
+| anil  |     NULL | NULL |     6 |
++-------+----------+------+-------+
+
+
+DENSE_RANK(): It assigns a rank to every row in the partition. It works similarly to the rank function in that the first row in each partition will be assigned rank 1, and if the two rows have the same value, then they will have the same rank. The difference between the RANK() and DENSE_RANK() function is that if two rows have the same rank in DENSE_RANK, the next row will be assigned the next consecutive number as the next records rank. It means that no rank is skipped.
+
+mysql> select ename, salary ,comm , Dense_Rank() Over(order by comm desc)  ranks  from Employee;
++-------+----------+------+-------+
+| ename | salary   | comm | ranks |
++-------+----------+------+-------+
+| Ravi  | 22000.00 | 4000 |     1 |
+| Ford  | 40000.00 | 3000 |     2 |
+| Jerry | 25000.00 | 3000 |     2 |
+| Tom   | 30000.00 | 1500 |     3 |
+| Scott | 35000.00 | 1000 |     4 |
+| King  | 50000.00 | NULL |     5 |
+| Smith | 45000.00 | NULL |     5 |
+| Adam  | 47000.00 | NULL |     5 |
+| anil  |     NULL | NULL |     5 |
++-------+----------+------+-------+
+
+
+
+NTILE:
+-------
+
+mysql> select   ename, salary , dno   ,  NTile(2) Over(Partition by dno)  as bucket_num  from employee;
++--------+----------+------+------------+
+| ename  | salary   | dno  | bucket_num |
++--------+----------+------+------------+
+| anil   |     NULL | NULL |          1 |
+| Smith  | 45000.00 |   10 |          1 |
+| Tom    | 30000.00 |   10 |          1 |
+| Scott  | 35000.00 |   10 |          2 |
+| Ford   | 40000.00 |   20 |          1 |
+| Jerry  | 25000.00 |   20 |          1 |
+| Ravi   | 22000.00 |   20 |          2 |
+| javeed | 12000.00 |   20 |          2 |
+| Adam   | 47000.00 |   30 |          1 |
+| King   | 50000.00 |   40 |          1 |
++--------+----------+------+------------+
+
+
+
+
+
+
