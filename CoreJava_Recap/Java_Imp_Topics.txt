@@ -1,0 +1,29 @@
+
+
+Important topics:
+-----------------
+Primitive Data types
+Non-Primitive Data types
+Wrapper Classes
+
+Class , Object , Constructor (default , parameterized)
+Interface  
+Types of Variables 
+local , static , instance
+
+Access modifiers 
+private , public , protected , default
+final , static 
+
+
+Types of methods
+static method , concrete method , instance method
+
+
+Basics of String , StringBuffer 
+Arrays (1D , 2D)
+
+
+
+
+
