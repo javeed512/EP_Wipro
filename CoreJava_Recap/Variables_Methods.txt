@@ -1,0 +1,98 @@
+
+Data types:
+
+byte , short , int , long , float , double  ----> 0 or 0.0
+
+char  -->  single space    
+boolean ----> false
+
+Any Class or Interface Type ----> null 
+
+------------------------------------------------
+
+Types of Variables:
+===================
+1.Local Variable
+2. Instance variable 
+3. Static variable
+
+
+Local variable:
+--------------
+
+A varible declare inside block (method,try,catch,loops,if-else,static) or
+variables declare as parameters 
+
+-> Local variable also known as Thread - Level variables or Temp variable
+-> Loval variables values should be initialize by user , JVM can't initialise values to the local vars.
+
+
+example1:
+
+class  Demo {
+
+	public static void main(String[] ar) {
+	
+		String name;
+
+		System.out.println("Hello friends");
+		
+	}
+	
+	
+	int  add(int a, int b) {
+		
+		int result;
+		
+		result = a+b;
+		
+		return result;
+		
+	}
+}	
+
+
+
+
+ex2:
+
+try{
+
+int x;  // local var
+
+
+}
+catch(Exception e){ // local var
+
+
+}
+
+
+
+
+Instance Variable:
+------------------
+Varibale declare inside class but outside all the blocks without static keyword is known as Instance variable.
+-> Memory allocated in Heap Memory Block.
+-> Instance vars also known as Object level variables.
+-> Instance vars are used as  Data members or Properties in classes.
+-> Once object is destroyed , all its mapping instance variables will be deleted.
+-> In java every object will have seperate copy of Instance variables.
+-> Instance  variables are used when we want to have seperate copy of properties for each entity/object
+-> Instance Lifetime is same as lifetime of objects
+
+
+Static variable:
+---------------
+-> Static variable , are declare inside the class outside all blocks using static keyword
+-> Memory allocation for static members (vars,methods,blocks) will be  done during class loading
+
+
+
+
+
+
+
+
+
+
