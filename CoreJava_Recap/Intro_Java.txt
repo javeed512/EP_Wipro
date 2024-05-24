@@ -1,0 +1,152 @@
+
+Java:
+=====
+It is High level language created by using c-lang.
+It uses OOPs concepts , also known as Object Oriented Programming lang.
+It is Open Source
+It is Secure
+It is Robust
+It is Multi-tasking
+It is Platform Independent
+It is used to develop Desktop Applications , Web Applications , Mobile Applications
+It is mostly used for Server Side Programming. (Backend Programming)
+It is API (Application Programming Interface)
+Technologies:
+AI , ML , Devops Tools (Jenkis,SonarQube,Jira), Microservices , Blockchain , Cloud Computing
+Pega , Salesforce , SAP , HANA , Hadoop , Mulesoft , Dockers (Kubernetes) , IOT , Android
+ 
+Java Naming Convections:
+------------------------
+package:
+--------
+    lower case 
+
+syn: domain.company.project.module.submodule;
+
+	com.lnt.metro.tickets.booking
+
+ java.lang;
+ java.util;
+ java.util.concurrent;
+
+  com.demo;
+    demo.user;
+
+
+class/interface/enum:
+---------------------
+InitCap
+
+Employee , Student , Customer , BankAccounts 
+
+Object , String , System , Scanner , ArrayList, Hashtable , HashMap , Arrays....
+
+constructor:
+-------------
+
+ InitCap  (same as class name)
+
+  String() , Customer() , BankAccounts(name,amount);
+
+
+methods / variables:
+-----------------------
+Camel case:
+ 
+   int  num;
+   int   accountNumber;
+   String   customerFullName;		
+
+
+   int  add();
+   int   addNumbers();
+   String  get();
+   String  getAllEmployees();
+
+
+------------------------------------
+final Variables:
+
+   final double  PI = 3.141;
+
+   final String  IFSC = "HDBC1234"
+
+Note: In Java names known identifiers.
+    In java names can be  strings  which can have only alphabets , alpha-numeric , $ and _
+
+   int    abc;
+           abc = 100;
+		
+   int    abc123;
+    
+  int      123abc; (should not start with digits)
+
+  int   salary$;         int  balance@; (invalid)
+
+  final  String  TOKEN_NUMBER = "1234ABC";
+
+		
+Types of Java Editions:
+-----------------------
+
+1. JSE : Java Standard Edition (core java)
+         Desktop Application and Standalone Application
+
+	Ex: Paint , Eclipse , Games , Browser , Tools  , Software in electronic devices 
+
+2. JEE : Java Enterprise Edition (advance java)
+
+	 Web Applications and Enterprise Applications
+
+	Web Ex: University Website , State Govt Website 
+        Enterprise Ex:  Banking Apps/Server , Google , Amazon , Facebook , Youtube ..
+	
+
+3. JME : Java Micro(Mobile) Edition 
+
+ Ex:  Mobiles Apps , Application for small devices , Video Games
+
+   
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
