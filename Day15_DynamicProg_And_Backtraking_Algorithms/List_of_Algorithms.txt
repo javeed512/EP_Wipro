@@ -1,7 +1,19 @@
 
 Algorithms Modules completed
 Recap the following:
-Time  12:30pm to 1:15pm
+Time  12:40pm to 1:10pm
+
+First do this:
+-----------------
+Geometric Algorithms
+Numerical Algorithms
+Encryption Algorithms
+Machine Learning Algorithms
+Data Compression Algorithms
+Parallel and Distributed Algorithms
+
+
+
 
 Understanding Algorithms in Java and Analysing Algorithms
 Algorithms Fundamentals
@@ -26,9 +38,24 @@ Graph Algorithms
 Dynamic Programming Algorithms
 Greedy Algorithms
 Pattern Searching Algorithms
-Geometric Algorithms
-Numerical Algorithms
-Encryption Algorithms
-Machine Learning Algorithms
-Data Compression Algorithms
-Parallel and Distributed Algorithms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

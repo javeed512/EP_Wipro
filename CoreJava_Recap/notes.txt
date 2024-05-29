@@ -1,0 +1,136 @@
+
+OOPs:
+-----
+Object Oriented Programming Concepts are used in Programming where we focus more on Objects/Instances to represent real world entities rather than functionality / Behaviour.
+
+c-lang:
+
+String   employee_details(){
+
+	  return "101 king  salary";
+
+
+}
+
+-------------
+OOPs lang:  Java , c++ , c#
+
+class  Employee{
+
+
+public Employee	getEmployeeDetails(){
+
+	Employee e1 = new Employee(101,"king",50000);
+
+	Address  a1 = new Address();
+
+	BankAccount  account = new BankAccount();
+
+	return e1;
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+OOPs:
+------
+1.Object and Class
+2. Inheritance
+3. Polymorphism
+4. Encapsulation
+5. Abstraction
+6. Data Hiding
+7. Cohesion and Coupling
+
+
+
+Object:
+-------
+Object is a real world entity which exist physically.
+Object is an instance of a class.
+Object can have state and behaviour
+Object are created by using new Operator by JVM in Heap memory.
+
+  String  s1 =   new  String();
+
+
+
+Class:
+------
+Class is a collection of objects.
+Class is a blue print using it one can create instances/objects.
+Class is  imaginary in nature.
+Class is a reusable component.
+
+
+class   Employee{
+
+
+	int eid;
+	String ename;
+	double salary;
+
+
+
+}
+
+
+
+
+class Object{
+
+
+
+  int	hashcode(){}
+	
+   String toString(){  
+
+	return  pkgname.classname@+hashcode();
+
+ 	
+ }
+
+ boolean  equals();
+  	
+  void finalize();
+
+  Class	getClass();
+	
+	clone();
+
+	wait();
+	notify();
+	notifyAll();
+
+
+	
+
+
+
+}
+
+
+
+Public > Protected > default > private
+
+
+
+
+
+
+
+
+
+
+
+
+
