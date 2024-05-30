@@ -1,0 +1,35 @@
+Abstraction
+Highlighting set of services to the end user and hiding implementation code.
+
+Note: Sometime one developers team can hide implementation code from another team to achieve abstraction in application development.
+
+
+Abstraction = Interface + Abstract class
+
+Interface
+---------
+User: Interface is an medium to access , Set of services highlighted to the end users.
+Developer: Interface is a specification/requirement with set of services which need to implement by developers
+
+
+
+
+
+Abstract classes and Implementation classes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
