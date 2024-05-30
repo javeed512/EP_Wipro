@@ -1,0 +1,177 @@
+Framework:
+
+Collection of APIs
+
+API: Application Programming Interface
+
+Interface , Classes , methods
+
+
+
+Collections framework:
+Collection APIs
+
+java.util.*;
+
+Collection
+
+List
+Set
+Queue
+
+
+Map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Inheritance:
+
+class A,B,C
+
+interface I1  --> m1() , m2()
+interface I2  --> m3(), m4()
+interface I3 ---> m5()
+
+
+class  A extends B implements I1,I2 
+
+interface I1 extends I2 , I3  (Multiple Inheritance)
+
+class A implments I1{
+
+
+
+}
+
+class A extends I1{
+
+}
+
+
+Marker interface
+
+interface  MyInterface {
+
+
+}
+
+RandomAccess {
+
+}
+
+
+
+
+
+Object o = new Object();
+Object  o = new Integer()  or new Double()  or String() 
+
+
+
+
+12 methods
+Collection c = 	new ArrayList();
+
+
+8 methods
+List  l =  new ArrayList();
+
+Set  s =  new HashSet();
+
+Queue q = new  PriorityQueue();
+
+
+
+
+l reference we can call 20 methods
+
+c reference we can call only 12 methods
+
+
+
+
+
+list1 = 20 objects
+
+list2 =  5 objects
+
+
+list1.retainAll(list2);
+
+list1.containAll(list2);
+
+
+
+
+
+
+
+
+
+
+TreeSet:
+=======
+
+TreeSet allows only those objects whose class implements Comparable interface (compareTo())
+
+
+Comparable interface is implemented by
+String , StringBuffer class and All Wrapper classes (Integer,Float,Long,Double.....)
+
+
+
+class String implements Comparable {
+
+
+
+	int  compareTo(T t){    // A,B   
+
+		A = 65
+		B = 66
+		"A".compareTo("B");  // A-B = -1
+
+			// B,A   ----> A,B
+
+		"B".compareTo("A");   // B-A  = 1
+		
+	// A,A
+		"A".compareTo("A");   // A-A  = 0
+		
+
+		
+	}
+
+
+
+}
+
+
+
+--------------------------------------------------------
+User Defined classes
+1. implements java.lang.Comparable interface and compareTo() in same class.
+2.  implements  java.util.Comparator interface and compare() in different seperate class.
+
+Predefined Classes
+->  implements  java.util.Comparator interface and compare() in different seperate class.
+
+
+
+
+
+
+
+
+
