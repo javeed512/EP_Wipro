@@ -1,0 +1,22 @@
+java.util.PriorityQueue class
+Designed for holding elements prior to processing in a single-threaded environment. All operations are not thread-safe
+Supported since Java 1.5
+Ordering rules
+Elements are ordered according to their Comparable natural ordering or by a Comparator provided at queue construction time
+No guarantees about the ordering of elements with equal priority. If you need it, consider defining custom classes or comparators that use a secondary key to break ties in primary priority values
+The iterator() method is not guaranteed to traverse the elements of the priority queue in any particular order. If you need ordered traversal, consider using Arrays.sort(pq.toArray())
+Other rules
+Does not permit null elements. Comparable PriorityQueue also does not permit insertion of non-comparable objects
+Capacity is unbounded and auto grown internally
+Some supported operations
+add(e) or offer(e), adds element into the queue
+remove() or poll(), removes and retrieves the highest priority element
+element() or peek(), retrieves the highest priority element
+
+
+
+
+java.util.concurrent.PriorityBlockingQueue class
+Designed to be used primarily for producer-consumer queues in a multi-threaded environment. All public operations are protected with a single lock
+PriorityBlockingQueue uses the same ordering rules as PriorityQueue and supplies blocking retrieval operations
+Supported since Java 1.5
