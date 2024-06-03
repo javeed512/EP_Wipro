@@ -1,0 +1,105 @@
+Java8 Features:
+---------------
+1. Functional Interface
+2. Lambda expression
+3. static , default methods
+4. java.time package
+5. Stream API
+6. method and constructor references (::)
+
+
+Functional Interface:
+An interface which will have only one abstract method.
+
+
+Lambda Expression:
+
+It is an implementation of Functional Interface.
+It is anonymous block with parameters and body.
+
+syn:
+ 
+   (int x, int y){  // anonymous block
+
+	return x+y;
+	
+  } 
+
+
+
+
+
+
+
+
+
+Types of Functional Interface/Lambda Expression:
+================================================
+1. Function Functional Interface
+
+If Interface abstract method takes some parameters and returns some value known as Function Functional interface and its implementation is known as Function Lambda Expression.
+
+	int  find(int x)
+	int add(int a , int b);
+	int findLength(String str);
+
+
+2. Consumer Functional Interface
+If Functional interface's abstract method  accept some inputs but does not return any value then its known as Consumer Functional interface and its implementation known Consumer Lambda Expression.
+
+	void  setName(String name);
+	void  print(int x, double d);
+
+
+3. Supplier Functional Interface
+If Functional interface's abstract method  does not accept inputs but  it always return some value then its known as Supplier Functional interface and its implementation known Supplier Lambda Expression.
+
+	String  getName();
+	int     result();
+	boolean   isValid();
+
+
+4. Predicate Functional Interface
+If Interface abstract method takes some parameters and returns always boolean value known as Predicate Functional interface and its implementation is known as Predicate Lambda Expression.
+
+	boolean add(int a , int b);
+	boolean findLength(String str);
+
+
+-----------------------------------------------------
+
+Note: Till Java7 interfaces cannot have methods with body
+
+But , from Java8 interfaces can also have non-abstract methods/method with body.
+
+
+public interface MyInterface{
+
+	//abstract methods
+  // non-abstract methods  should be define as static or default
+
+
+}
+
+static method: 
+static method can be called by using interface name.
+Note: Anybody can call static methods irrespective of that interface is implemented by that person or not.
+
+default method:
+default method can be called only by using Interface implementation (class/lambda exp) object.
+
+It can be used only by those people who implements given interface either using class in Java7 or
+using lambda exp in java8.
+
+
+
+
+
+
+
+
+
+
+
+
+
