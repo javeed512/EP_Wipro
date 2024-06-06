@@ -1,0 +1,74 @@
+
+IO Package
+-----------
+java.io.*;
+
+In Java using IO Package all input/output operations can be performed by using some IO related APIs.
+
+Stream:  Flow of Data from source to destination.
+
+Character Stream: These classes stream data char by char.
+Reader
+FileReader
+BufferedReader		read();	
+InputStreamReader
+
+
+Writer
+FileWriter		write();
+BufferedWriter
+PrintWriter
+
+		
+
+Byte Stream:  These classes stream data byte by byte.
+
+(reading purpose)
+InputStream
+FileInputStream			read();
+BufferedInputStream
+ObjectInputStream
+
+
+(writing)
+OutputStream
+FileOutputStream		write();
+BufferedOutputStream
+ObjectOutputStream
+
+
+methods: In IO Package , read(),readLine(),readObject(),
+		write(),writeObject(),flush() , close();
+Exceptions:  FileNotFoundException , IOException
+
+
+
+read()  --> it can read one char at a time and returns char ASCII value.
+write() ---> it can write only one char at a time and accept char ASCII Value
+  "ABCD" ---->int read() ---> A ---return--> 65
+  "ABCD"--->A--->65 ---> write(int n)	
+	
+
+
+public class System{
+
+
+	static InputStream  in = any child of InputStream obj;
+	static PrintStream out;
+	static PrintStream err;
+
+	public static void gc(){
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
