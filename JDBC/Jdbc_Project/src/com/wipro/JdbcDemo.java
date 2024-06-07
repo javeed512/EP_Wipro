@@ -1,7 +1,9 @@
 package com.wipro;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -21,11 +23,26 @@ public class JdbcDemo {
 
 			Statement stmt = conn.createStatement();
 
-			String insert = "insert into customer values(101,'king','2001-01-01',5000)";
+			// String insert = "insert into customer values(101,'king','2001-01-01',5000)";
 
-			int count = stmt.executeUpdate(insert);
+			// int count = stmt.executeUpdate(insert);
 
-			System.out.println(count + " record affected");
+			// System.out.println(count + " record affected");
+
+			String selectQuery = "select * from customer";
+
+			ResultSet rs = stmt.executeQuery(selectQuery);
+
+			while (rs.next()) {
+
+				int cid = rs.getInt("cid");
+				String cname = rs.getString("cname");
+				Date dob = rs.getDate("dob");
+				double amount = rs.getDouble("amount");
+
+				System.out.println(cid + " " + cname + " " + dob + " " + amount);
+
+			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
