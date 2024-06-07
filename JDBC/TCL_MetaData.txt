@@ -1,0 +1,31 @@
+
+JDBC Transaction Management:
+
+Note: In jdbc all DML Operations are auto-commit.
+
+1. conn.setAutoCommit(false);
+
+2. conn.commit();
+
+3. conn.rollback();
+
+4. save point
+ Savepoint s1 = conn.setSavepoint("s1"); 
+ //conn.releaseSavepoint(s1);
+  s1.commit();
+  s1.rollback();
+
+
+Database Meta Data:
+==================
+
+DatabaseMetaData dbmd =	conn.getMetaData();
+
+
+ResultSetMetaData rsmd = rs.getMetaData();
+
+		
+
+
+
+

@@ -62,56 +62,100 @@ public class CustomerDAO {
 
 		return count;
 	}
-	
-	public int  delete() {
-		
-		
+
+	public int delete() {
+
 		String deleteQuery = "delete from customer where  cid = ?";
-		
-		//pstmt.setInt(1,101);
-		
+
+		// pstmt.setInt(1,101);
+
 		return 0;
 	}
-	
-	
-	
-	public  List   selectAll() {
-		
-		List<Customer>  list = new ArrayList<Customer>();
-		
-			String selectAll = "select * from customer";
-				
+
+	public Customer selectOne() {
+
+		String selectOne = "select * from customer where  cid = ?";
+
+		Customer customer = null;
+
 		try {
-			PreparedStatement pstmt =	conn.prepareStatement(selectAll);
+			PreparedStatement pstmt = conn.prepareStatement(selectOne);
 			
-			ResultSet  rs =		pstmt.executeQuery();
-			
-				while(rs.next()) {
-					
-					int cid = rs.getInt("cid");
-					String cname = rs.getString("cname");
-					Date dob = rs.getDate("dob");
-					double amount = rs.getDouble("amount");
-					
-					Customer customer = new Customer(cid, cname, dob, amount);
-					
-					list.add(customer);
-					
-				}
-			
-			
-			
-			
+					pstmt.setInt(1, 101);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				int cid = rs.getInt("cid");
+				String cname = rs.getString("cname");
+				Date dob = rs.getDate("dob");
+				double amount = rs.getDouble("amount");
+
+				// customer = new Customer(cid, cname, dob, amount);
+				customer = new Customer();
+
+				customer.setCid(cid);
+				customer.setCname(cname);
+				customer.setDob(dob);
+				customer.setAmount(amount);
+
+			}
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
+		return customer;
+
+	}
+
+	public List<Customer> selectAll() {
+
+		List<Customer> list = new ArrayList<Customer>();
+
+		String selectAll = "select * from customer";
+
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(selectAll);
+
+			ResultSet rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				int cid = rs.getInt("cid");
+				String cname = rs.getString("cname");
+				Date dob = rs.getDate("dob");
+				double amount = rs.getDouble("amount");
+
+				Customer customer = new Customer(cid, cname, dob, amount);
+
+				list.add(customer);
+
+			}
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return list;
-		
+
 	}
 	
 	
+	public   void  closeConnection() {
+		
+		
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+	}
 	
 	
 

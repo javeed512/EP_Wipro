@@ -21,6 +21,9 @@ public class PSDemo {
 				
 				System.out.println(customer);
 			}
+			
+			System.out.println("Select One ");
+			System.out.println(dao.selectOne());
 		
 	}
 

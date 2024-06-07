@@ -9,6 +9,13 @@ public class Customer {
 	private String cname;
 	private  Date dob;
 	private  double amount;
+	
+	public Customer() {
+		
+		
+	}
+	
+	
 	public Customer(int cid, String cname, Date dob, double amount) {
 		super();
 		this.cid = cid;
