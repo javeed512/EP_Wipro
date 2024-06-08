@@ -1,0 +1,28 @@
+
+
+Java Very Imp Topics:
+---------------------
+OOPs
+Pojo / Entity Class
+Variables(local,instace,static)
+String , StringBuffer , Basics of Arrays
+Collection Framework
+(ArrayList,HashSet,TreeSet,HashMap,TreeMap,Properties,Iterator)
+Collections , Arrays class
+Comparator
+FileReader , FileInputStream 
+Exception Handling (try-catch-finally , Custom Exception)
+
+Advance Features
+Lambda Expression and Functional Interfaces
+static , default methods
+method reference
+java.time Data and Time
+Stream API
+
+JDBC (PreparedStatement CRUD Operations)
+Junit-5
+
+
+
+
