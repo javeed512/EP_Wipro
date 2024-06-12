@@ -1,6 +1,6 @@
 package factorymethod.designpattern;
 
-public class RoadCreatorImp implements Creator {
+public class RoadCreatorImp implements Creator {// factory class
 
 	@Override
 	public Logistics getTransport() {  // method factory
