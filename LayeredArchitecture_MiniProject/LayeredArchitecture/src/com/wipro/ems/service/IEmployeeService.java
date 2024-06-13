@@ -9,12 +9,12 @@ public interface IEmployeeService {
 
 	public int addEmployee(Employee emp)  throws SQLException;
 
-	public int updateEmployee(Employee emp);
+	public int updateEmployee(Employee emp)  throws SQLException;
 
-	public int deleteEmployee(int eid);
+	public int deleteEmployee(int eid)  throws SQLException;
 
-	public Employee getEmployeeById(int eid);
+	public Employee getEmployeeById(int eid)  throws SQLException;
 
-	public List<Employee> getAllEmployees();
+	public List<Employee> getAllEmployees() throws SQLException;
 
 }

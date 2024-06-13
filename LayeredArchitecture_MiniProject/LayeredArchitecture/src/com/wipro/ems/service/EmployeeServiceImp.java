@@ -26,25 +26,25 @@ public class EmployeeServiceImp implements IEmployeeService {
 	}
 
 	@Override
-	public int updateEmployee(Employee emp) {
+	public int updateEmployee(Employee emp) throws SQLException {
 
 		return  dao.updateEmployee(emp);
 	}
 
 	@Override
-	public int deleteEmployee(int eid) {
+	public int deleteEmployee(int eid) throws SQLException {
 
 		return dao.deleteEmployee(eid);
 	}
 
 	@Override
-	public Employee getEmployeeById(int eid) {
+	public Employee getEmployeeById(int eid) throws SQLException {
 
 		return dao.getEmployeeById(eid);
 	}
 
 	@Override
-	public List<Employee> getAllEmployees() {
+	public List<Employee> getAllEmployees() throws SQLException {
 
 		return dao.getAllEmployees();
 	}
