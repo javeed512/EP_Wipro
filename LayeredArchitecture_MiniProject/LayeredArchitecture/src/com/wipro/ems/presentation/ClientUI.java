@@ -1,8 +1,12 @@
 package com.wipro.ems.presentation;
 
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
 
 import com.wipro.ems.entity.Employee;
 import com.wipro.ems.exceptions.EmployeeNotFoundException;
@@ -10,11 +14,30 @@ import com.wipro.ems.service.EmployeeServiceImp;
 import com.wipro.ems.service.IEmployeeService;
 
 public class ClientUI {
-
+	
+	
+	static	Logger log = Logger.getRootLogger();
+	
+					
+	  
+	    
+	
 	static Scanner scanner = new Scanner(System.in);
 
 	public static void main(String[] args) {
-
+		
+			
+		
+		  log.trace("Trace Message!");
+	      log.debug("Debug Message!");
+	      log.info("Info Message!");
+	      log.warn("Warn Message!");
+	      log.error("Error Message!");
+	      log.fatal("Fatal Message!");
+		  
+		  
+		  	
+		  
 		IEmployeeService service = new EmployeeServiceImp();
 
 		boolean flag = true;
@@ -35,6 +58,8 @@ public class ClientUI {
 				switch (choice) {
 				case 1:
 
+						
+						
 					Employee emp = acceptInputs();
 
 					int count = service.addEmployee(emp);
