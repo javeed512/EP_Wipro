@@ -1,0 +1,14 @@
+CSS:
+
+CSS can be used in 3 diff ways:
+
+1. Inline css
+2. Embedded/Internal css
+3. External css
+
+
+Inline Css:
+
+style attribute in html is used for inline css.
+
+<h1  style="color:red;font-size:10px" >Hello</h1>
