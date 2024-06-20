@@ -1,0 +1,77 @@
+
+
+
+<app-home></app-home>
+
+
+
+<h1>ngIf Directive</h1>
+
+
+<h1 *ngIf="true" >Hello friends</h1>
+
+<h2  *ngIf="5 > 3">Welcome</h2>
+
+
+<h1>ngFor Directive</h1>
+
+<div *ngFor="let i of arr  ; index as j"  >  {{i}}  {{j}}  </div>
+
+Table:
+
+<table border="1">
+
+        <tr *ngFor="let i of arr" ><td>{{i}}</td></tr>
+
+</table>
+
+List:
+<ol>
+
+    <li *ngFor="let i of arr">{{i}}</li>
+
+</ol>
+
+
+Enter Course: <input type="text"  name="course"   [(ngModel)]="course">
+
+
+<ul  [ngSwitch]="course">
+
+    <li *ngSwitchCase="'java'" >Welcome to Java</li>
+    <li *ngSwitchCase="'mysql'" >Welcome to Msql</li>
+    <li *ngSwitchCase="'python'" >Welcome to Python</li>
+
+    <li *ngSwitchDefault>Invalid Coruse</li>
+
+
+</ul>
+
+
+
+
+
+
+
+
+Switch Case Demo:
+
+
+<ul  [ngSwitch]="choice">
+
+    <li *ngSwitchCase="1" >One</li>
+    <li *ngSwitchCase="2" >Two</li>
+    <li *ngSwitchCase="3" >Three</li>
+    <li *ngSwitchCase="4" >Four</li>
+    <li *ngSwitchDefault>Invalid Number</li>
+
+
+</ul>
+
+
+
+
+
+
+
+ 
