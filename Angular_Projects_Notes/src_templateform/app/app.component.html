@@ -1,0 +1,16 @@
+
+
+<h1>Angular Template Driven Form</h1>
+
+
+<form    #empForm="ngForm"  (ngSubmit)="getFormData(empForm.value)"   >
+
+    Enter Eid: <input type="text" name="eid"  ngModel > <br>
+    Enter EName : <input type="text"  name="ename"  ngModel> <br> 
+    Enter EName : <input type="text"  name="salary"  ngModel> <br> 
+
+        <button type="submit">Submit</button>
+
+
+
+</form>

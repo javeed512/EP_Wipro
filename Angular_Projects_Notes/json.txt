@@ -1,0 +1,100 @@
+public class Address{
+
+ private String city;
+
+
+}
+
+
+
+
+public class  Employee{
+	private int eid;
+	private  String ename;
+	private int salary;
+	private Date doj;
+	private Address address;
+
+	public Employee(Address address,String ename){
+
+		this.address = address;
+		this.ename = ename;
+
+	}
+
+	public  void setAddress(Address address){
+		this.address = address;
+	}
+
+
+}
+
+	Address addr = new Address();
+
+ //Employee emp =	new  Employee(addr,"javeed");
+
+	Employee emp2 = new Employee();
+
+		emp2.setAddress(addr);
+
+
+
+
+
+TypeScript:
+
+------------
+
+class HelloService {
+
+	sayHello(){
+
+		//logic	
+	}
+
+
+
+}
+
+class  HelloComponent{
+
+	
+	constructor(private service:HelloService){
+
+
+
+	}
+
+	service.sayHello();
+
+}
+
+
+XML FORMAT:
+
+<employee>
+ <eid>101</eid>
+ <ename>javeed</ename>
+</employee>
+
+
+JSON: JAVASCRIPT OBJECT NOTATION
+
+employee:{
+ "eid":101,
+ "ename":"javeed",
+ "salary":8000,
+ "doj":"2024-06-21",
+ "address":{
+	"city":"Hyderabad",
+	"state":"Telangana"	
+	
+	}
+}
+
+
+employee.eid
+employee.ename
+employee.adddress.city
+
+
