@@ -1,0 +1,26 @@
+
+
+<h1>Angular Template Driven Form</h1>
+
+Emp : {{emp.eid}} {{ emp.ename }}  {{emp.salary}} <br>
+
+
+<form    #empForm="ngForm"  (ngSubmit)="getFormData(empForm.value)"   >
+
+    Enter Eid: <input type="text" name="eid"  ngModel   required   #eidcontrol="ngModel"><br>
+    <span  style="color:red"  *ngIf="eidcontrol.touched && eidcontrol.invalid">Eid is Mandatory</span>
+    
+    <br>
+    Enter EName : <input type="text"  name="ename"  ngModel  required  #enamecontrol="ngModel" > <br> 
+    <span style="color:red" *ngIf="enamecontrol.touched && enamecontrol.invalid"  >EName is Mandatory</span> <br>
+    Enter Salary : <input type="text"  name="salary"  ngModel  required #salarycontrol="ngModel"> <br> 
+    <span style="color:red" *ngIf="salarycontrol.touched && salarycontrol.invalid"  >Salary is Mandatory</span> <br>
+        <button type="submit"   [disabled]="empForm.invalid">Submit</button>
+
+
+
+</form>
+
+
+
+<app-login></app-login>

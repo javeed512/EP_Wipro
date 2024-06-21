@@ -1,0 +1,28 @@
+
+
+<h1 class="alert-success">Login Form</h1>
+
+<div class="container">
+
+<form class="col-md-4"      #loginForm="ngForm"   (ngSubmit)="getLoginData(loginForm.value)"     >
+
+
+    <label for="username">Enter UserName: </label>
+    <input type="text" name="username"  class="form-control" required  ngModel   #uname="ngModel">
+    <div style="color:red" *ngIf="uname.touched && uname.invalid">UserName is Mandatory</div>
+
+
+    <label for="email">Enter Email: </label>
+    <input type="email" name="email"  class="form-control" required  ngModel   #emailcontrol="ngModel">
+    <div style="color:red" *ngIf="emailcontrol.touched && emailcontrol.invalid">Email is Mandatory</div>
+    <!-- <div style="color:red" *ngIf="emailcontrol.errors.email">Invalid Email format</div> -->
+
+    <label for="password">Enter Password:</label>
+    <input type="password" name="password" class="form-control" required  ngModel  #pwd="ngModel">
+    <div style="color:red" *ngIf="pwd.touched && pwd.invalid">Password is Mandatory</div>
+        <button type="submit" class="btn btn-primary"  [disabled]="loginForm.invalid" >Login</button>
+
+
+</form>
+
+</div>
