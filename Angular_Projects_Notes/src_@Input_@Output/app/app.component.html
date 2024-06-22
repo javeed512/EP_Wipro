@@ -1,0 +1,7 @@
+
+
+<h1 >WELCOME TO PARENT COMPONENT</h1>
+
+Data from Child to Parent: {{receiveChildData}}
+
+<app-child    [myInput]="parentData"   (eventEmitter)="getChildData($event)"      ></app-child>
