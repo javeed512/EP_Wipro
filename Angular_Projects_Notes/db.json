@@ -1,0 +1,44 @@
+{
+  "employees": [
+    {
+      "id": 101,
+      "ename": "king",
+      "salary": 50000
+    },
+    {
+      "id": 102,
+      "ename": "tom",
+      "salary": 40000
+    },
+    {
+      "id": 103,
+      "ename": "smith",
+      "salary": 30000
+    },
+    {
+      "id": 104,
+      "ename": "ford",
+      "salary": 20000
+    },
+    {
+      "id": 107,
+      "ename": "ravi",
+      "salary": 40000
+    },
+    {
+      "id": "106",
+      "ename": "Deepak",
+      "salary": 45000
+    },
+    {
+      "id": "108",
+      "ename": "Pushpa",
+      "salary": 65000
+    },
+    {
+      "id": "111",
+      "ename": "Scott",
+      "salary": 35000
+    }
+  ]
+}

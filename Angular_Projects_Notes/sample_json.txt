@@ -1,0 +1,38 @@
+
+{
+
+"employees":[
+
+	{"eid":101,"ename":"king","salary":50000},
+	{"eid":102,"ename":"tom","salary":40000},
+	{"eid":103,"ename":"smith","salary":30000},
+	{"eid":104,"ename":"ford","salary":20000},
+	{"eid":105,"ename":"javeed","salary":10000}
+
+
+
+
+	]
+
+}
+
+
+
+
+
+
+Angular HttpClient service :
+
+HttpClient service will help us to use all kind of Http  services/methods
+By using HttpClient service we can access resources for GET,POST,PUT,DELETE Operations.
+
+1. Need to inject HttpClient service into the custom service(EmployeeService)
+2. Inject EmployeeService into the EmployeeComponent and used it.
+Note: To used HttpClient service first we need to 
+import HttpClientModule in app.module.ts
+
+
+
+
+
+

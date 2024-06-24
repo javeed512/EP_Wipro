@@ -1,0 +1,18 @@
+<h1>Employee Component</h1>
+
+
+<button type="button"  (click)="getAllEmployees()">Show All Employees</button> <br>
+
+Employee Details: <br>
+
+
+
+<table  boder="1">
+
+<tr  *ngFor="let emp of empList">
+
+        <td>{{emp.id}}</td><td>{{emp.ename}}</td><td>{{emp.salary}}</td>
+</tr>
+
+</table>
+

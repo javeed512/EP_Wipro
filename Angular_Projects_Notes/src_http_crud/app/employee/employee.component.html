@@ -1,0 +1,75 @@
+<h1>Employee Component</h1>
+
+
+<button type="button"  (click)="getAllEmployees()">Show All Employees</button> <br>
+
+Employee Details: <br>
+
+
+
+<table  class="table table-stripped col-md-4">
+
+<tr  *ngFor="let emp of empList">
+
+        <td>{{emp.id}}</td><td>{{emp.ename}}</td><td>{{emp.salary}}</td>
+         <td><button type="button" class="btn btn-danger"  (click)="deleteEmployee(emp.id)"  >Delete</button></td>
+</tr>
+
+</table>
+
+<br>
+
+
+
+
+
+
+<h1 class="alert-success">Add Employee Form</h1>
+
+<div class="container">
+
+<form class="col-md-4"      #empForm="ngForm"   (ngSubmit)="createEmployee(empForm.value)"     >
+
+
+    <label for="id">Enter EID: </label>
+    <input type="text" name="id"  class="form-control" required  ngModel   #id="ngModel">
+    <div style="color:red" *ngIf="id.touched && id.invalid">ID is Mandatory</div>
+
+
+    <label for="ename">Enter EName: </label>
+    <input type="text" name="ename"  class="form-control" required  ngModel   #enamecontrol="ngModel">
+    <div style="color:red" *ngIf="enamecontrol.touched && enamecontrol.invalid">EName is Mandatory</div>
+  
+
+    <label for="salary">Enter Salary:</label>
+    <input type="number" name="salary" class="form-control" required  ngModel  #salary="ngModel">
+    <div style="color:red" *ngIf="salary.touched && salary.invalid">Salary is Mandatory</div>
+        <button type="submit" class="btn btn-primary"  [disabled]="empForm.invalid" >ADD EMPLOYEE</button>
+
+
+</form>
+
+</div>
+
+
+
+<h1 class="alert-success">Search Employee Form</h1>
+
+<div class="container">
+
+<form class="col-md-4"      #searchForm="ngForm"   (ngSubmit)="searchEmployee(searchForm.value)"     >
+
+
+    <label for="id">Enter EID: </label>
+    <input type="number" name="id"  class="form-control" required  ngModel   #id="ngModel">
+    <div style="color:red" *ngIf="id.touched && id.invalid">ID is Mandatory</div>
+
+
+ <button type="submit" class="btn btn-success"  [disabled]="searchForm.invalid" >SEARCH EMPLOYEE</button>
+</form>
+</div>
+
+
+
+
+<h2>{{emp.id}}   {{emp.ename}}   {{emp.salary}}</h2>
