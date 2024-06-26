@@ -1,0 +1,113 @@
+JSP:
+
+Java Server Pages (HTML + JSP Tags)
+
+JSP pages will be executed by JSP Engine at Server Side , and output will be render on browser.
+
+JSP Elements:
+--------------
+1. JSP Template 
+ (HTML or Text)
+2. JSP Scriplet  
+    <%  any java code %>
+
+
+3. JSP Declaration
+	<%!  any java code  %>
+	
+
+4. JSP  Expression
+	<%= java exp  %>
+
+5. JSP  Directives
+
+	<%@ import library  %>
+
+
+6. JSP  Action Tags
+
+	<jsp:useBean>
+
+
+
+
+
+
+
+
+hello.jsp file 
+
+Auto-Generated Servlted created by JSP  Engine
+---------------------------------------------
+
+import  java.util.Date;
+
+class  Hello_Servlet  extends HttpServlet{   // Hello_Servlet.java
+
+	int eid;
+	String ename;
+	static    double salary;
+	
+		void m1(){
+			
+			
+		}
+		
+
+
+
+
+
+	void jspInit(ServletConfig config){   }
+
+
+
+	void jspService(request,response){
+
+		HttpSession	session;
+		ServletContext  application;
+		PageContext   pageContext;
+
+
+	JspWriter out =	response.getWriter();
+
+		out.print("hellofriends");
+
+		int x =99;
+	
+		out.print("x value: "+x);
+
+		out.print("<h1>WELCOME</h1>");
+		
+		Date date =	new Date();
+
+			out.print(date);
+
+
+		
+
+	   }
+
+	
+
+
+
+	void jspDestroy(){   }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
