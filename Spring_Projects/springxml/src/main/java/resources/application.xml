@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!-- setter method dependency injection is used here -->
+
+	<bean id="s1" class="com.wipro.springxml.Student">
+
+
+		<property name="sid" value="102"></property>
+		<property name="sname" value="king"></property>
+
+
+	</bean>
+
+
+		
+		<!-- constructor dependency injection is used here-->
+
+	<bean id="s2" class="com.wipro.springxml.Student">
+
+		<constructor-arg name="sid" value="111"></constructor-arg>
+		<constructor-arg name="sname" value="tom"></constructor-arg>
+
+	</bean>
+
+
+
+
+
+</beans>

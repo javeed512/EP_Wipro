@@ -1,0 +1,22 @@
+
+Spring Framework Annotations:
+
+
+Annotation which instruct IOC to create object.
+
+@Component  (use for component class/pojo/bean class)
+@Service      (use for service class)
+@Repository   (use for repository or DAO)
+@Controller   (use for controllers or servlets)
+
+@Bean
+@Configuration
+
+
+@Autorwire  (it performs auto-wiring or DI )
+
+
+@ComponentScan 
+ (to scan packages to identify beans for which objects need to be created and autowiring need to perform)
+
+
