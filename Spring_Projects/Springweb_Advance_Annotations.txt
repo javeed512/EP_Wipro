@@ -1,0 +1,53 @@
+
+Spring MVC / Web
+
+maven project (maven software)
+Spring web jar files
+Controller , jsp ,html
+External Tomcat Server (Servlet Engine + Jsp Engine)
+Database
+
+
+Pivotal has given a spring product known as Spring Boot.
+
+its  own maven
+its own java jdk
+its own embedded tomcat server (Servlet Engine)
+its own embedded Database H2.
+its own dependencies (spring starters)
+
+it does not support xml configuration
+it supports properties file or yml file as config file.
+it does not support JSP pages also.
+
+
+
+
+
+Spring Web/MVC Annotations:
+
+@Controller
+@RequestMapping
+@ResponseBody
+@ModelAttribute
+
+@RequestBody
+@PathVariable
+
+@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
+
+
+@ResponseStatus
+@ResponseEntity
+
+
+
+
+
+
+
+
+
