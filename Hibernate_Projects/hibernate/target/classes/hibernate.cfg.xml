@@ -26,5 +26,8 @@
 
 		<!-- Mapping with model class containing annotations -->
 		<mapping class="com.hexaware.hibernate.entity.Employee" />
+		
+		<mapping class="com.hexaware.hibernate.entity.Student" />
+		
 	</session-factory>
 </hibernate-configuration>
