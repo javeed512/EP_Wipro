@@ -16,6 +16,15 @@ public interface IEmployeeService {
 		
 		
 		public   List<Employee>   getAllEmployees();
+		
+		
+		public Employee   getByEname(String ename);
+		
+		
+		public  List<Employee>  getByGTSalary(double salary);
+		
+		
+		public  List<Employee> getAllSorted();
 	
 	
 

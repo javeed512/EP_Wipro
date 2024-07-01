@@ -1,12 +1,17 @@
 package com.wipro.restapi.entities;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Component("e1")
+@Entity
+@Table(name = "Employee_Info")
 public class Employee {
 
+	@Id
 	private int eid;
+	@Column(name = "emp_name")
 	private String ename;
 	private double salary;
 
