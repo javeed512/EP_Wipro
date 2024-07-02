@@ -1,0 +1,72 @@
+
+Spring Data JPA 
+
+Custom Select Query:
+
+@Query(any JPQL query)
+
+
+DML Queries:
+
+@Modifying
+@Query(any dml query)
+
+@Transactional
+On top of ServiceImp class
+
+
+
+
+Java Exception Handling
+
+try-catch-finally
+
+In SpringBoot provides 
+
+ Global Exceptional handling
+
+@ExceptionHandler
+
+Example:
+
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+	
+	
+	
+//@ResponseStatus(reason = "some error occur", code = HttpStatus.BAD_REQUEST)
+		@ExceptionHandler(Exception.class)
+		public  ResponseEntity<String>  handleGlobalExp(){
+			
+			
+			return new ResponseEntity<String>("Some Exp Occur in Application",HttpStatus.BAD_REQUEST);
+			
+			
+		}
+	
+
+}
+
+
+
+
+Note: To add @ResponseStatus(reason="msg")  add below property in application.properties file.
+
+server.error.include-message=always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
