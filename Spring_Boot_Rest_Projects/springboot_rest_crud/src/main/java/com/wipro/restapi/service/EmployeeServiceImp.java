@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.stereotype.Service;
 
 import com.wipro.restapi.entities.Employee;
 import com.wipro.restapi.repository.EmployeeRepository;
 
+import jakarta.transaction.Transactional;
+
+@Transactional
 @Service
 public class EmployeeServiceImp implements IEmployeeService {
 	
@@ -69,6 +71,21 @@ public class EmployeeServiceImp implements IEmployeeService {
 		return repo.findAll(Sort.by("salary"));
 		
 	  	//repo.findAll(Sort.by(Order.desc("ename")));
+	}
+
+	@Override
+	public List<Employee> getAllEmployeesBySalaryRange(double min, double max) {
+		
+		return  repo.getAllEmployeesBySalaryRange(min, max);
+	}
+
+	
+	@Override
+	public void deleteByEname(String ename) {
+
+			repo.deleteByEname(ename);
+		
+		
 	}
 
 }

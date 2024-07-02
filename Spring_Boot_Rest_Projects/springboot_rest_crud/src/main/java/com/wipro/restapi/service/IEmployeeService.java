@@ -27,5 +27,8 @@ public interface IEmployeeService {
 		public  List<Employee> getAllSorted();
 	
 	
+		public List<Employee>  	 getAllEmployeesBySalaryRange(double min,double max);
+		
+		public  void  deleteByEname(String ename);
 
 }
